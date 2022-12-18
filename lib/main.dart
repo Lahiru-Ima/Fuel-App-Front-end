@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'DashBoardPage/DashBoardPage.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class FuelApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fuel App',
-      home: DashBoardPage(),
+      home: Body(),
     );
   }
 }
