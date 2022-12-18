@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'SearchBox.dart';
+
 class Body extends StatefulWidget {
   static const routName = "/body";
 
@@ -46,38 +48,49 @@ class _BodyState extends State<Body> {
                 )
               ],
             ),
-            const SizedBox(
-              height: 5,
+            SearchBox(
+              onChanged: (value) {},
             ),
-            Container(
-              decoration: const BoxDecoration(color: Colors.white, boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  offset: Offset(1, 1),
-                  blurRadius: 4,
-                )
-              ]),
-              child: const ListTile(
-                leading: Icon(
-                  Icons.search,
-                  color: Colors.blueGrey,
-                ),
-                title: TextField(
-                  decoration: InputDecoration(
-                      hintText: "Find nearest fuel store",
-                      border: InputBorder.none),
-                ),
-                trailing: Icon(
-                  Icons.filter_list,
-                  color: Colors.blueGrey,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
+            CategoryList(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CategoryList extends StatefulWidget {
+  const CategoryList({super.key});
+
+  @override
+  State<CategoryList> createState() => _CategoryListState();
+}
+
+class _CategoryListState extends State<CategoryList> {
+  int selectedIndex = 0;
+  List categories = ["All", "Petrol", "Desal", "Gas"];
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: 10,
+      ),
+      height: 40,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 28),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.4),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Text(categories[index],
+                style: TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.bold))),
       ),
     );
   }
