@@ -26,7 +26,7 @@ class SearchBox extends StatelessWidget {
         ),
         title: TextField(
           decoration: InputDecoration(
-              hintText: "Find nearest fuel store", border: InputBorder.none),
+              hintText: "Find nearest fuel station", border: InputBorder.none),
         ),
         trailing: Icon(
           Icons.filter_list,

@@ -15,8 +15,10 @@ class FuelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Fuel App',
       home: Body(),
+      // home: const LogInScreen(),
     );
   }
 }
