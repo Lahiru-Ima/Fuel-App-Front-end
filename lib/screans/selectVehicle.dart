@@ -34,6 +34,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
 
   String? _selectFuelType = "";
   String? _selectedVal = "";
+  String? _displayText = "";
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +69,24 @@ class _SelectVehicleState extends State<SelectVehicle> {
                 onChanged: (val) {
                   setState(() {
                     _selectedVal = val as String;
+
+                    //petrol
+                    if (_selectedVal == _vehicleType[0]) {
+                      _displayText = "You have 4L for a week";
+                    }
+                    if (_selectedVal == _vehicleType[1]) {
+                      _displayText = "You have 5L for a week";
+                    }
+                    if (_selectedVal == _vehicleType[2]) {
+                      _displayText = "You have 4L for a week";
+                    }
+                    if (_selectedVal == _vehicleType[3]) {
+                      _displayText = "You have 20L for a week";
+                    }
                   });
                 },
               ),
+              Text(_displayText!),
             ],
           ),
         ),
