@@ -12,14 +12,14 @@ class SearchBox extends StatelessWidget {
     return Container(
       margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
       padding: EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 10,
+        horizontal: 5,
+        vertical: 5,
       ),
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.4),
           borderRadius: BorderRadius.circular(20)),
       child: const ListTile(
-        //onChanged:onChanged,
+        // onChanged:onChanged,
         leading: Icon(
           Icons.search,
           color: Color.fromARGB(255, 70, 5, 98),
