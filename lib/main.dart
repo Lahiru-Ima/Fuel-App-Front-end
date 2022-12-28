@@ -19,7 +19,7 @@ class FuelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Fuel App',
-      home: productScreen(),
+      home: const productScreen(),
       //home: SelectVehicle(),
 
       // home: const LogInScreen(),
