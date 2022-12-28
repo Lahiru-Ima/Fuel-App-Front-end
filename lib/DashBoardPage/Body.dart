@@ -29,34 +29,62 @@ class Body extends StatelessWidget {
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40))),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(
-                horizontal: 30,
-                vertical: 30,
-              ),
-              height: 160,
-              //color: Colors.blueAccent,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  Container(
-                    height: 136,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(22),
-                        color: Colors.blueGrey),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(22)),
-                    ),
-                  ),
-                ],
-              ),
-            )
+            ProductCard()
           ],
         ))
       ],
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  const ProductCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(
+        horizontal: 30,
+        vertical: 30,
+      ),
+      height: 160,
+      //color: Colors.blueAccent,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            height: 136,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(22),
+                color: Colors.blueGrey),
+            child: Container(
+              margin: EdgeInsets.only(left: 10),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(color: Colors.purpleAccent, blurRadius: 1)
+                  ],
+                  borderRadius: BorderRadius.circular(22)),
+            ),
+          ),
+          //image
+          Positioned(
+              top: 0,
+              left: 0,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                height: 160,
+                width: 200,
+                child: Image.asset(
+                  "images/gas.png",
+                  fit: BoxFit.cover,
+                ),
+              )),
+          //title and price etc
+        ],
+      ),
     );
   }
 }
