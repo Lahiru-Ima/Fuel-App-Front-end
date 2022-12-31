@@ -11,6 +11,11 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/selectNearestShed');
+            },
+            child: Text("Search Nearest Fuel station")),
         SearchBox(
           onChanged: (value) {},
         ),
