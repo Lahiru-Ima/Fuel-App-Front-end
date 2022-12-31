@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
+import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
 import 'DashBoardPage/DashBoardPage.dart';
 
@@ -20,6 +21,9 @@ class FuelApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Fuel App',
       home: const productScreen(),
+      routes: {
+        '/selectNearestShed': (context) => SearchNearestShed(),
+      },
       //home: SelectVehicle(),
 
       // home: const LogInScreen(),
