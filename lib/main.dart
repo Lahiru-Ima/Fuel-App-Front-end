@@ -5,6 +5,7 @@ import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
+import 'package:fuel_app/station_owner_screen/fuelArrivalUpdateScreen.dart';
 import 'DashBoardPage/DashBoardPage.dart';
 
 void main() {
@@ -20,11 +21,10 @@ class FuelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Fuel App',
-      home: const productScreen(),
-      routes: {
-        '/selectNearestShed': (context) => SearchNearestShed(),
-      },
+      //home: productScreen(),
       //home: SelectVehicle(),
+      home: FuelArrivalUpdate(),
+      //home: FuelFinishUpdate(),
 
       // home: const LogInScreen(),
     );
