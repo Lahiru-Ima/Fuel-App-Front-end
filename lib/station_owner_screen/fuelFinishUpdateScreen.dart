@@ -26,7 +26,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FuelArrivalUpdate"),
+        title: Text("FuelFinishUpdate"),
         backgroundColor: Color.fromARGB(255, 201, 157, 216),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
