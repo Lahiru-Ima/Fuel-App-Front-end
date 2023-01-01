@@ -26,7 +26,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FuelFinishUpdate"),
+        title: Text("Fuel Finish Update"),
         backgroundColor: Color.fromARGB(255, 201, 157, 216),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -38,6 +38,11 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Image(
+              image: AssetImage('images/finish.png'),
+              height: 400,
+              width: 300,
+            ),
             ElevatedButton(
               onPressed: _selectTime,
               child: Text('Update Fuel Finish Time'),
