@@ -39,13 +39,23 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-          
               onPressed: _selectTime,
               child: Text('Update Fuel Arrival Time'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(20.0),
+                ),
+              ),
             ),
             SizedBox(height: 10),
-            Text(
-              'Fuel Arrival Time: ${_time.format(context)}',
+            Center(
+              child: Text(
+                'Fuel Arrival Time:\n        ${_time.format(context)}',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
@@ -53,26 +63,3 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
-
-

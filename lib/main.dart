@@ -6,6 +6,7 @@ import 'package:fuel_app/DashBoardPage/productScreen.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
 import 'package:fuel_app/station_owner_screen/fuelArrivalUpdateScreen.dart';
+import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
 import 'DashBoardPage/DashBoardPage.dart';
 
 void main() {
