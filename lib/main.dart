@@ -24,8 +24,8 @@ class FuelApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Fuel App',
       //home: productScreen(),
-      //home: SelectVehicle(),
-      home: FuelArrivalUpdate(),
+      home: SelectVehicle(),
+      //home: FuelArrivalUpdate(),
       //home: FuelFinishUpdate(),
       //home: QueueUpdate(),
 

@@ -39,54 +39,112 @@ class _SelectVehicleState extends State<SelectVehicle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 201, 157, 216),
       body: Container(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              DropdownButton(
-                value: _selectFuelType,
-                items: _fuelType
-                    .map((e) => DropdownMenuItem(
-                          child: Text(e),
-                          value: e,
-                        ))
-                    .toList(),
-                onChanged: (val) {
-                  setState(() {
-                    _selectFuelType = val as String;
-                  });
-                },
+              Text(
+                "Select Fuel Type Here:",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              DropdownButton(
-                value: _selectedVal,
-                items: _vehicleType
-                    .map((e) => DropdownMenuItem(
-                          child: Text(e),
-                          value: e,
-                        ))
-                    .toList(),
-                onChanged: (val) {
-                  setState(() {
-                    _selectedVal = val as String;
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(130, 8, 120, 8),
+                decoration: BoxDecoration(
+                    color: Colors.purple,
+                    borderRadius: BorderRadius.circular(20)
+                    //.copyWith(bottomRight: Radius.circular(0)),
+                    ),
+                child: DropdownButton(
+                  style: const TextStyle(
+                      color: Colors.white, //<-- SEE HERE
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold),
+                  dropdownColor: Colors.purple,
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                    color: Colors.white, // <-- SEE HERE
+                  ),
+                  value: _selectFuelType,
+                  items: _fuelType
+                      .map((e) => DropdownMenuItem(
+                            child: Text(e),
+                            value: e,
+                          ))
+                      .toList(),
+                  onChanged: (val) {
+                    setState(() {
+                      _selectFuelType = val as String;
+                    });
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Select Your Vehicle Type Here:",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 8, 10, 8),
+                decoration: BoxDecoration(
+                    color: Colors.purple,
+                    borderRadius: BorderRadius.circular(20)
+                    //.copyWith(bottomRight: Radius.circular(0)),
+                    ),
+                child: DropdownButton(
+                  style: const TextStyle(
+                      color: Colors.white, //<-- SEE HERE
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold),
+                  dropdownColor: Colors.purple,
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                    color: Colors.white, // <-- SEE HERE
+                  ),
+                  value: _selectedVal,
+                  items: _vehicleType
+                      .map((e) => DropdownMenuItem(
+                            child: Text(e),
+                            value: e,
+                          ))
+                      .toList(),
+                  onChanged: (val) {
+                    setState(() {
+                      _selectedVal = val as String;
 
-                    //petrol
-                    if (_selectedVal == _vehicleType[0]) {
-                      _displayText = "You have 4L for a week";
-                    }
-                    if (_selectedVal == _vehicleType[1]) {
-                      _displayText = "You have 5L for a week";
-                    }
-                    if (_selectedVal == _vehicleType[2]) {
-                      _displayText = "You have 4L for a week";
-                    }
-                    if (_selectedVal == _vehicleType[3]) {
-                      _displayText = "You have 20L for a week";
-                    }
-                  });
-                },
+                      //petrol
+                      if (_selectedVal == _vehicleType[0]) {
+                        _displayText = "You have 4L for a week";
+                      }
+                      if (_selectedVal == _vehicleType[1]) {
+                        _displayText = "You have 5L for a week";
+                      }
+                      if (_selectedVal == _vehicleType[2]) {
+                        _displayText = "You have 4L for a week";
+                      }
+                      if (_selectedVal == _vehicleType[3]) {
+                        _displayText = "You have 20L for a week";
+                      }
+                    });
+                  },
+                ),
               ),
-              Text(_displayText!),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                _displayText!,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
