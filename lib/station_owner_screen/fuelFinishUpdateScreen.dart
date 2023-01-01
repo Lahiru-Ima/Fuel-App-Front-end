@@ -41,10 +41,21 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
             ElevatedButton(
               onPressed: _selectTime,
               child: Text('Update Fuel Finish Time'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(20.0),
+                ),
+              ),
             ),
             SizedBox(height: 10),
-            Text(
-              'Fuel Finish Time: ${_time.format(context)}',
+            Center(
+              child: Text(
+                'Fuel Finish Time:\n         ${_time.format(context)}',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
