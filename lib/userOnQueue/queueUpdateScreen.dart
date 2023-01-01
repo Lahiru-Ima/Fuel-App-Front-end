@@ -27,7 +27,7 @@ class QueueUpdate extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black),
+                            color: Colors.white),
                         children: <TextSpan>[
                       TextSpan(
                           text: 'Fuel Center',
@@ -52,7 +52,7 @@ class QueueUpdate extends StatelessWidget {
                 child: Text('Join To The Queue'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.purple,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 65, vertical: 20),
                   textStyle:
                       TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   shape: new RoundedRectangleBorder(
@@ -80,7 +80,7 @@ class QueueUpdate extends StatelessWidget {
                 child: Text('Exit After Pump Fuel'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.purple,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 58, vertical: 20),
                   textStyle:
                       TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   shape: new RoundedRectangleBorder(
