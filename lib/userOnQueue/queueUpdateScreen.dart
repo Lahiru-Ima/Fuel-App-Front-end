@@ -8,7 +8,7 @@ class QueueUpdate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 201, 157, 216),
+        backgroundColor: const Color.fromARGB(255, 201, 157, 216),
         body: Center(
             child: Column(children: [
           const Image(
@@ -49,40 +49,40 @@ class QueueUpdate extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: (() {}),
-                child: Text('Join To The Queue'),
+                child: const Text('Join To The Queue'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.purple,
-                  padding: EdgeInsets.symmetric(horizontal: 65, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 65, vertical: 20),
                   textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: (() {}),
-                child: Text('Exit Before Pump Fuel'),
+                child: const Text('Exit Before Pump Fuel'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.purple,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                   textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: (() {}),
-                child: Text('Exit After Pump Fuel'),
+                child: const Text('Exit After Pump Fuel'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.purple,
-                  padding: EdgeInsets.symmetric(horizontal: 58, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 58, vertical: 20),
                   textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(20.0),
                   ),
