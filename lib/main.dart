@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
+import 'package:fuel_app/SplashScreen/splash_screen.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
 import 'package:fuel_app/station_owner_screen/fuelArrivalUpdateScreen.dart';
@@ -23,11 +24,12 @@ class FuelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
       title: 'Fuel App',
-      //home: productScreen(),
-      home: SelectVehicle(),
-      //home: FuelArrivalUpdate(),
+      // home: productScreen(),
+      // home: SelectVehicle(),
+      // home: FuelArrivalUpdate(),
       //home: FuelFinishUpdate(),
-      //home: QueueUpdate(),
+      // home: QueueUpdate(),
+      home: SplashScreen(),
 
       // home: const LogInScreen(),
     );
