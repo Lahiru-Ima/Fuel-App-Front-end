@@ -7,6 +7,7 @@ import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
 import 'package:fuel_app/station_owner_screen/fuelArrivalUpdateScreen.dart';
 import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
+import 'package:fuel_app/userOnQueue/queueUpdateScreen.dart';
 import 'DashBoardPage/DashBoardPage.dart';
 
 void main() {
@@ -24,8 +25,10 @@ class FuelApp extends StatelessWidget {
       title: 'Fuel App',
       //home: productScreen(),
       //home: SelectVehicle(),
-      home: FuelArrivalUpdate(),
+      //home: FuelArrivalUpdate(),
       //home: FuelFinishUpdate(),
+      home: QueueUpdate(),
+
 
       // home: const LogInScreen(),
     );
