@@ -40,7 +40,7 @@ class QueueUpdate extends StatelessWidget {
             ),
           ),
           const Text(
-            'Update your status here to get a better service',
+            'Update your status here \n  to get a better service',
             style: TextStyle(color: Colors.amberAccent, fontSize: 15),
           ),
           const SizedBox(height: 40),
