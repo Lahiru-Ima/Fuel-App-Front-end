@@ -19,3 +19,5 @@ TextStyle textButton = const TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.w700,
 );
+
+const kAnimationDuration = Duration(milliseconds: 200);
