@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fuel_app/theme.dart';
 
 class FuelFinishUpdate extends StatefulWidget {
   @override
@@ -27,7 +28,9 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Fuel Finish Update"),
-        backgroundColor: Color.fromARGB(255, 201, 157, 216),
+        backgroundColor: kPrimaryColor,
+
+        //backgroundColor: Color.fromARGB(255, 201, 157, 216),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(40),
@@ -36,7 +39,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Image(
               image: AssetImage('images/finish.png'),
@@ -47,19 +50,26 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
               onPressed: _selectTime,
               child: Text('Update Fuel Finish Time'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
+                primary: kPrimaryColor,
+                //primary: Colors.purple,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                textStyle: TextStyle(
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold
+                ),
                 shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(20.0),
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Center(
               child: Text(
                 'Fuel Finish Time:\n         ${_time.format(context)}',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 25,
+                  //fontWeight: FontWeight.bold
+                ),
               ),
             ),
           ],

@@ -26,9 +26,9 @@ class FuelApp extends StatelessWidget {
       title: 'Fuel App',
       // home: productScreen(),
       // home: SelectVehicle(),
-      // home: FuelArrivalUpdate(),
+      //home: FuelArrivalUpdate(),
       //home: FuelFinishUpdate(),
-      // home: QueueUpdate(),
+      //home: QueueUpdate(),
       home: SplashScreen(),
 
       // home: const LogInScreen(),

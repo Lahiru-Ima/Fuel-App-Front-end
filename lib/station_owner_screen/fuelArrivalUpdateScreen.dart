@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fuel_app/theme.dart';
 
 class FuelArrivalUpdate extends StatefulWidget {
   @override
@@ -27,16 +28,18 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Fuel Arrival Update"),
-        backgroundColor: Color.fromARGB(255, 201, 157, 216),
+        backgroundColor: kPrimaryColor,
+        // backgroundColor: Color.fromARGB(255, 201, 157, 216),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(40),
+            bottom: Radius.circular(100),
           ),
         ),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Image(
               image: AssetImage('images/arrival.png'),
@@ -47,19 +50,26 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
               onPressed: _selectTime,
               child: Text('Update Fuel Arrival Time'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
+                primary: kPrimaryColor,
+                //primary: Colors.purple,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                textStyle: TextStyle(
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold
+                ),
                 shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(20.0),
+                  borderRadius: new BorderRadius.circular(40.0),
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Center(
               child: Text(
                 'Fuel Arrival Time:\n        ${_time.format(context)}',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 25,
+                  //fontWeight: FontWeight.bold
+                ),
               ),
             ),
           ],
