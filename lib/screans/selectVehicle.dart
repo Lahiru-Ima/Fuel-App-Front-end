@@ -45,8 +45,13 @@ class _SelectVehicleState extends State<SelectVehicle> {
       body: Container(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const Image(
+                image: AssetImage('images/fuelWoman.png'),
+                height: 400,
+                width: 300,
+              ),
               Text(
                 "Select Fuel Type Here:",
                 style: TextStyle(
