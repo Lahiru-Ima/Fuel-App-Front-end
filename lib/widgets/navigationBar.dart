@@ -7,6 +7,7 @@ import '../DashBoardPage/productScreen.dart';
 import '../screans/login.dart';
 import '../screans/selectVehicle.dart';
 import '../station_owner_screen/fuelArrivalUpdateScreen.dart';
+import '../station_owner_screen/fuelFinishUpdateScreen.dart';
 import '../userOnQueue/queueUpdateScreen.dart';
 
 class NavBar extends StatefulWidget {
@@ -24,6 +25,7 @@ class _NavBarState extends State<NavBar> {
     QueueUpdate(),
     SelectVehicle(),
     FuelArrivalUpdate(),
+    //FuelFinishUpdate(),
 
     // Center(child: Text("Home")),
     // Center(child: Text("Profile")),
@@ -60,7 +62,11 @@ class _NavBarState extends State<NavBar> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.map),
                 label: "Map",
-                backgroundColor: kPrimaryColor)
+                backgroundColor: kPrimaryColor),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.timeline),
+            //     label: "EndTime",
+            //     backgroundColor: kPrimaryColor),
           ]),
     );
   }
