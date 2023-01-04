@@ -21,7 +21,10 @@ class productScreen extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      title: Text("Fuel Availability"),
+      title: Text(
+        "Fuel Availability",
+        style: TextStyle(color: kPrimaryColor),
+      ),
       centerTitle: false,
 
       //                 Stack(

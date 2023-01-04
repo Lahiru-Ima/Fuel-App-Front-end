@@ -66,10 +66,9 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
             Center(
               child: Text(
                 'Fuel Arrival Time:\n        ${_time.format(context)}',
-                style: TextStyle(
-                  fontSize: 25,
-                  //fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontSize: 25, color: kSecondaryColor
+                    //fontWeight: FontWeight.bold
+                    ),
               ),
             ),
           ],
