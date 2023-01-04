@@ -33,7 +33,7 @@ class FuelApp extends StatelessWidget {
       //home: QueueUpdate(),
       //home: SplashScreen(),
       home: NavBar(),
-
+      //home: SearchNearestShed(),
       //home: const LogInScreen(),
     );
   }

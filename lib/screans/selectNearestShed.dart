@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fuel_app/theme.dart';
 import 'package:snippet_coder_utils/FormHelper.dart';
 
 class SearchNearestShed extends StatefulWidget {
@@ -82,6 +83,9 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             FormHelper.dropDownWidgetWithLabel(
+              hintColor: kPrimaryColor,
+              textColor: Colors.white,
+
               context,
               "Select Province",
               "Select Province",
@@ -109,7 +113,8 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
                 }
                 return null;
               },
-              borderColor: Theme.of(context).primaryColor,
+              borderColor: kPrimaryColor,
+              // Theme.of(context).primaryColor,
               borderFocusColor: Theme.of(context).primaryColor,
               borderRadius: 10,
               optionValue: "id",
