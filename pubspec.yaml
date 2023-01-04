@@ -47,6 +47,16 @@ dev_dependencies:
     sdk: flutter
   google_fonts: ^2.0.0
   flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.2.16
+
+flutter_native_splash:
+  color: "#fcfcfc"
+  image: images/splash.png
+
+  android: true
+  ios: true
+
+
 
 flutter:
   uses-material-design: true

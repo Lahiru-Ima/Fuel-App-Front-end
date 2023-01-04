@@ -49,6 +49,7 @@ class QueueUpdate extends StatelessWidget {
       const SizedBox(height: 40),
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ElevatedButton(
             onPressed: (() {}),

@@ -33,7 +33,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
         //backgroundColor: Color.fromARGB(255, 201, 157, 216),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(40),
+            bottom: Radius.circular(100),
           ),
         ),
       ),
