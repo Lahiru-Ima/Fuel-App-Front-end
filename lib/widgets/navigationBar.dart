@@ -52,8 +52,8 @@ class _NavBarState extends State<NavBar> {
                 label: "Fuel Finish",
                 backgroundColor: kPrimaryColor),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: "Search",
+                icon: Icon(Icons.queue),
+                label: "Queue",
                 backgroundColor: kPrimaryColor),
             BottomNavigationBarItem(
                 icon: Icon(Icons.car_crash_outlined),

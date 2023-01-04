@@ -69,29 +69,31 @@ class _SelectVehicleState extends State<SelectVehicle> {
                     borderRadius: BorderRadius.circular(40)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
-                child: DropdownButton(
-                  style: const TextStyle(
-                    color: Colors.white, //<-- SEE HERE
-                    fontSize: 20,
-                    //fontWeight: FontWeight.bold
+                child: new DropdownButtonHideUnderline(
+                  child: DropdownButton(
+                    style: const TextStyle(
+                      color: Colors.white, //<-- SEE HERE
+                      fontSize: 20,
+                      //fontWeight: FontWeight.bold
+                    ),
+                    dropdownColor: kPrimaryColor,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.white, // <-- SEE HERE
+                    ),
+                    value: _selectFuelType,
+                    items: _fuelType
+                        .map((e) => DropdownMenuItem(
+                              child: Text(e),
+                              value: e,
+                            ))
+                        .toList(),
+                    onChanged: (val) {
+                      setState(() {
+                        _selectFuelType = val as String;
+                      });
+                    },
                   ),
-                  dropdownColor: kPrimaryColor,
-                  icon: Icon(
-                    Icons.arrow_drop_down,
-                    color: Colors.white, // <-- SEE HERE
-                  ),
-                  value: _selectFuelType,
-                  items: _fuelType
-                      .map((e) => DropdownMenuItem(
-                            child: Text(e),
-                            value: e,
-                          ))
-                      .toList(),
-                  onChanged: (val) {
-                    setState(() {
-                      _selectFuelType = val as String;
-                    });
-                  },
                 ),
               ),
               SizedBox(
@@ -114,43 +116,45 @@ class _SelectVehicleState extends State<SelectVehicle> {
                     borderRadius: BorderRadius.circular(40)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
-                child: DropdownButton(
-                  style: const TextStyle(
-                    color: Colors.white, //<-- SEE HERE
-                    fontSize: 20,
-                    //fontWeight: FontWeight.bold
-                  ),
-                  dropdownColor: kPrimaryColor,
-                  icon: Icon(
-                    Icons.arrow_drop_down,
-                    color: Colors.white, // <-- SEE HERE
-                  ),
-                  value: _selectedVal,
-                  items: _vehicleType
-                      .map((e) => DropdownMenuItem(
-                            child: Text(e),
-                            value: e,
-                          ))
-                      .toList(),
-                  onChanged: (val) {
-                    setState(() {
-                      _selectedVal = val as String;
+                child: new DropdownButtonHideUnderline(
+                  child: DropdownButton(
+                    style: const TextStyle(
+                      color: Colors.white, //<-- SEE HERE
+                      fontSize: 20,
+                      //fontWeight: FontWeight.bold
+                    ),
+                    dropdownColor: kPrimaryColor,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.white, // <-- SEE HERE
+                    ),
+                    value: _selectedVal,
+                    items: _vehicleType
+                        .map((e) => DropdownMenuItem(
+                              child: Text(e),
+                              value: e,
+                            ))
+                        .toList(),
+                    onChanged: (val) {
+                      setState(() {
+                        _selectedVal = val as String;
 
-                      //petrol
-                      if (_selectedVal == _vehicleType[0]) {
-                        _displayText = "You have 4L for a week";
-                      }
-                      if (_selectedVal == _vehicleType[1]) {
-                        _displayText = "You have 5L for a week";
-                      }
-                      if (_selectedVal == _vehicleType[2]) {
-                        _displayText = "You have 4L for a week";
-                      }
-                      if (_selectedVal == _vehicleType[3]) {
-                        _displayText = "You have 20L for a week";
-                      }
-                    });
-                  },
+                        //petrol
+                        if (_selectedVal == _vehicleType[0]) {
+                          _displayText = "You have 4L for a week";
+                        }
+                        if (_selectedVal == _vehicleType[1]) {
+                          _displayText = "You have 5L for a week";
+                        }
+                        if (_selectedVal == _vehicleType[2]) {
+                          _displayText = "You have 4L for a week";
+                        }
+                        if (_selectedVal == _vehicleType[3]) {
+                          _displayText = "You have 20L for a week";
+                        }
+                      });
+                    },
+                  ),
                 ),
               ),
               SizedBox(

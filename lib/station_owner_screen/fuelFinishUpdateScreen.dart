@@ -58,14 +58,14 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
                   //fontWeight: FontWeight.bold
                 ),
                 shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(20.0),
+                  borderRadius: new BorderRadius.circular(40.0),
                 ),
               ),
             ),
             SizedBox(height: 40),
             Center(
               child: Text(
-                'Fuel Finish Time:\n         ${_time.format(context)}',
+                'Fuel Finish Time:\n       ${_time.format(context)}',
                 style: TextStyle(
                   fontSize: 25,
                   //fontWeight: FontWeight.bold
