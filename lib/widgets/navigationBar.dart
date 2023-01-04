@@ -21,7 +21,7 @@ class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
   final Screens = [
     productScreen(),
-    LogInScreen(),
+    FuelFinishUpdate(),
     QueueUpdate(),
     SelectVehicle(),
     FuelArrivalUpdate(),
@@ -48,20 +48,20 @@ class _NavBarState extends State<NavBar> {
                 label: "Home",
                 backgroundColor: kPrimaryColor),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: "Profile",
+                icon: Icon(Icons.timeline),
+                label: "Fuel Finish",
                 backgroundColor: kPrimaryColor),
             BottomNavigationBarItem(
                 icon: Icon(Icons.search),
                 label: "Search",
                 backgroundColor: kPrimaryColor),
             BottomNavigationBarItem(
-                icon: Icon(Icons.oil_barrel),
-                label: "Fuel",
+                icon: Icon(Icons.car_crash_outlined),
+                label: "vehicle Type",
                 backgroundColor: kPrimaryColor),
             BottomNavigationBarItem(
-                icon: Icon(Icons.map),
-                label: "Map",
+                icon: Icon(Icons.update),
+                label: "Fuel Arrival",
                 backgroundColor: kPrimaryColor),
             // BottomNavigationBarItem(
             //     icon: Icon(Icons.timeline),
