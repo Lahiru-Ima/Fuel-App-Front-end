@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:fuel_app/theme.dart';
 
 import 'SearchBox.dart';
 import 'categoryList.dart';
@@ -57,21 +58,19 @@ class ProductCard extends StatelessWidget {
         vertical: 30,
       ),
       height: 160,
-      //color: Colors.blueAccent,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
             height: 136,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22),
-                color: Colors.blueGrey),
+                borderRadius: BorderRadius.circular(22), color: kPrimaryColor),
             child: Container(
               margin: const EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
-                    const BoxShadow(color: Colors.purpleAccent, blurRadius: 1)
+                    const BoxShadow(color: kPrimaryColor, blurRadius: 1)
                   ],
                   borderRadius: BorderRadius.circular(22)),
             ),
@@ -104,7 +103,8 @@ class ProductCard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
                       "Gas Avalability",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: kPrimaryColor),
                     ),
                   ),
                   const Spacer(),
@@ -119,7 +119,8 @@ class ProductCard extends StatelessWidget {
                         )),
                     child: const Text(
                       "Available",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: kPrimaryColor),
                     ),
                   ),
                 ],

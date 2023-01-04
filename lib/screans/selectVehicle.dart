@@ -40,7 +40,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kSecondaryColor,
+      //backgroundColor: kSecondaryColor,
       // backgroundColor: Color.fromARGB(255, 201, 157, 216),
       body: Container(
         child: Center(
@@ -49,23 +49,27 @@ class _SelectVehicleState extends State<SelectVehicle> {
             children: [
               Text(
                 "Select Fuel Type Here:",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: kSecondaryColor),
               ),
               SizedBox(
                 height: 20,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(130, 8, 120, 8),
+                padding: EdgeInsets.fromLTRB(95, 8, 90, 8),
                 decoration: BoxDecoration(
                     color: kPrimaryColor,
-                    borderRadius: BorderRadius.circular(20)
+                    borderRadius: BorderRadius.circular(40)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
                 child: DropdownButton(
                   style: const TextStyle(
-                      color: Colors.white, //<-- SEE HERE
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white, //<-- SEE HERE
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold
+                  ),
                   dropdownColor: kPrimaryColor,
                   icon: Icon(
                     Icons.arrow_drop_down,
@@ -90,7 +94,10 @@ class _SelectVehicleState extends State<SelectVehicle> {
               ),
               Text(
                 "Select Your Vehicle Type Here:",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: kSecondaryColor),
               ),
               SizedBox(
                 height: 20,
@@ -99,14 +106,15 @@ class _SelectVehicleState extends State<SelectVehicle> {
                 padding: EdgeInsets.fromLTRB(20, 8, 10, 8),
                 decoration: BoxDecoration(
                     color: kPrimaryColor,
-                    borderRadius: BorderRadius.circular(20)
+                    borderRadius: BorderRadius.circular(40)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
                 child: DropdownButton(
                   style: const TextStyle(
-                      color: Colors.white, //<-- SEE HERE
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white, //<-- SEE HERE
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold
+                  ),
                   dropdownColor: kPrimaryColor,
                   icon: Icon(
                     Icons.arrow_drop_down,

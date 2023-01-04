@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fuel_app/theme.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    Key? key, required this.itemIndex, required this.product,
-
+    Key? key,
+    required this.itemIndex,
+    required this.product,
   }) : super(key: key);
   final int itemIndex;
   final Product product;
@@ -32,7 +34,7 @@ class ProductCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
-                    const BoxShadow(color: Colors.purpleAccent, blurRadius: 1)
+                    const BoxShadow(color: kSecondaryColor, blurRadius: 1)
                   ],
                   borderRadius: BorderRadius.circular(22)),
             ),
@@ -65,7 +67,8 @@ class ProductCard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
                       "Gas Avalability",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: kPrimaryColor),
                     ),
                   ),
                   const Spacer(),
@@ -80,7 +83,8 @@ class ProductCard extends StatelessWidget {
                         )),
                     child: const Text(
                       "Available",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: kPrimaryColor),
                     ),
                   ),
                 ],
