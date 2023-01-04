@@ -141,16 +141,16 @@ class _SelectVehicleState extends State<SelectVehicle> {
 
                         //petrol
                         if (_selectedVal == _vehicleType[0]) {
-                          _displayText = "You have 4L for a week";
+                          _displayText = "You can buy maximum 4L for a week";
                         }
                         if (_selectedVal == _vehicleType[1]) {
-                          _displayText = "You have 5L for a week";
+                          _displayText = "You can buy maximum  5L for a week";
                         }
                         if (_selectedVal == _vehicleType[2]) {
-                          _displayText = "You have 4L for a week";
+                          _displayText = "You can buy maximum 4L for a week";
                         }
                         if (_selectedVal == _vehicleType[3]) {
-                          _displayText = "You have 20L for a week";
+                          _displayText = "You can buy maximum  20L for a week";
                         }
                       });
                     },

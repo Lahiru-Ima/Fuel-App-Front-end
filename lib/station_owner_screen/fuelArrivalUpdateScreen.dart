@@ -41,6 +41,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            SizedBox(height: 50),
             const Image(
               image: AssetImage('images/arrival.png'),
               height: 400,

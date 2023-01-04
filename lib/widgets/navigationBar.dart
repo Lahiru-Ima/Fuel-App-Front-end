@@ -20,11 +20,11 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
   final Screens = [
-    productScreen(),
-    FuelFinishUpdate(),
-    QueueUpdate(),
-    SelectVehicle(),
+    const productScreen(),
+    const SelectVehicle(),
+    const QueueUpdate(),
     FuelArrivalUpdate(),
+    FuelFinishUpdate(),
     //FuelFinishUpdate(),
 
     // Center(child: Text("Home")),
@@ -43,25 +43,25 @@ class _NavBarState extends State<NavBar> {
           currentIndex: currentIndex,
           onTap: (index) => setState(() => currentIndex = index),
           items: [
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: "Home",
                 backgroundColor: kPrimaryColor),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.timeline),
-                label: "Fuel Finish",
-                backgroundColor: kPrimaryColor),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.queue),
-                label: "Queue",
-                backgroundColor: kPrimaryColor),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.car_crash_outlined),
                 label: "vehicle Type",
                 backgroundColor: kPrimaryColor),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.queue),
+                label: "Queue",
+                backgroundColor: kPrimaryColor),
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.update),
                 label: "Fuel Arrival",
+                backgroundColor: kPrimaryColor),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.timeline),
+                label: "Fuel Finish",
                 backgroundColor: kPrimaryColor),
             // BottomNavigationBarItem(
             //     icon: Icon(Icons.timeline),
