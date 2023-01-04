@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
+import 'package:fuel_app/theme.dart';
 
 class productScreen extends StatelessWidget {
   static const routName = "/productScreen";
@@ -10,7 +11,8 @@ class productScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 201, 157, 216),
+      backgroundColor: kSecondaryColor,
+      //backgroundColor: Color.fromARGB(255, 201, 157, 216),
       appBar: buildAppBar(),
       body: Body(),
     );
@@ -23,7 +25,7 @@ class productScreen extends StatelessWidget {
       centerTitle: false,
 
       //                 Stack(
-      backgroundColor: Color.fromARGB(255, 201, 157, 216),
+      backgroundColor: kSecondaryColor,
       actions: [
         IconButton(onPressed: () {}, icon: Icon(Icons.notifications_none)),
         // Positioned(

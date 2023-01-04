@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:fuel_app/theme.dart';
 
 class SelectVehicle extends StatefulWidget {
   static const routName = "/selectVehicle";
@@ -39,7 +40,8 @@ class _SelectVehicleState extends State<SelectVehicle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 201, 157, 216),
+      backgroundColor: kSecondaryColor,
+      // backgroundColor: Color.fromARGB(255, 201, 157, 216),
       body: Container(
         child: Center(
           child: Column(
@@ -55,7 +57,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
               Container(
                 padding: EdgeInsets.fromLTRB(130, 8, 120, 8),
                 decoration: BoxDecoration(
-                    color: Colors.purple,
+                    color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(20)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
@@ -64,7 +66,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
                       color: Colors.white, //<-- SEE HERE
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
-                  dropdownColor: Colors.purple,
+                  dropdownColor: kPrimaryColor,
                   icon: Icon(
                     Icons.arrow_drop_down,
                     color: Colors.white, // <-- SEE HERE
@@ -96,7 +98,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
               Container(
                 padding: EdgeInsets.fromLTRB(20, 8, 10, 8),
                 decoration: BoxDecoration(
-                    color: Colors.purple,
+                    color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(20)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
@@ -105,7 +107,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
                       color: Colors.white, //<-- SEE HERE
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
-                  dropdownColor: Colors.purple,
+                  dropdownColor: kPrimaryColor,
                   icon: Icon(
                     Icons.arrow_drop_down,
                     color: Colors.white, // <-- SEE HERE
