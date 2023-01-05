@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
 import 'package:quickalert/quickalert.dart';
+import 'package:http/http.dart' as http;
 
 class FuelArrivalUpdate extends StatefulWidget {
   const FuelArrivalUpdate({super.key});
@@ -12,7 +13,7 @@ class FuelArrivalUpdate extends StatefulWidget {
 class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
   TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
-  void selectArrivalTime() async {
+  void updateArrivalTime() async {
     final arrivalTime = await showTimePicker(
       context: context,
       initialTime: _time,
@@ -21,11 +22,12 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
       setState(() {
         _time = arrivalTime;
         print(_time.hour);
+        postData();
       });
     }
   }
 
-  void selectFinishedTime() async {
+  void updateFinishedTime() async {
     final TimeOfDay? finishedTime = await showTimePicker(
       context: context,
       initialTime: _time,
@@ -34,8 +36,21 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
       setState(() {
         _time = finishedTime;
         print(_time.hour);
+        postData();
       });
     }
+  }
+
+  postData() async {
+    var response = await http.post(
+        Uri.parse("https://fuel-app-backend.up.railway.app/api/fuelStatus"),
+        body: {
+          "fuelTypeName": "Petrol",
+          "arrivalTime": 8.15.toString(),
+          "finishedTime": 12.50.toString(),
+          "status": "Full"
+        });
+    print(response.body);
   }
 
   @override
@@ -95,7 +110,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: selectArrivalTime,
+              onPressed: updateArrivalTime,
               style: ElevatedButton.styleFrom(
                 backgroundColor: kPrimaryColor,
                 //primary: Colors.purple,
@@ -115,7 +130,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: selectFinishedTime,
+              onPressed: updateFinishedTime,
               style: ElevatedButton.styleFrom(
                 backgroundColor: kPrimaryColor,
                 //primary: Colors.purple,
