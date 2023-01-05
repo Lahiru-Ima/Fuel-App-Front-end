@@ -7,7 +7,6 @@ import '../widgets/primary_button.dart';
 import '../widgets/signup_form.dart';
 import 'login.dart';
 
-
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -36,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Already a member?',
+                    'Already Have an account?',
                     style: subTitle,
                   ),
                   const SizedBox(
@@ -44,10 +43,11 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LogInScreen()));
+                      Navigator.pushNamed(context, '/loginPage');
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => const LogInScreen()));
                     },
                     child: Text(
                       'Log In',
@@ -58,6 +58,15 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.center,
+              child: const Image(
+                image: AssetImage('images/finish.png'),
+                height: 250,
+                width: 300,
               ),
             ),
             const SizedBox(
@@ -77,23 +86,41 @@ class SignUpScreen extends StatelessWidget {
                 text: 'Agree to terms and conditions.',
               ),
             ),
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            // const Padding(
+            //   padding: kDefaultPadding,
+            //   child: CheckBox(
+            //     'I have at least 18 years old.',
+            //     text: 'I have at least 18 years old.',
+            //   ),
+            // ),
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: kDefaultPadding,
-              child: CheckBox(
-                'I have at least 18 years old.',
-                text: 'I have at least 18 years old.',
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/loginPage');
+              },
+              child: const Padding(
+                padding: kDefaultPadding,
+                child: PrimaryButton(buttonText: 'Customer'),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: kDefaultPadding,
-              child: PrimaryButton(buttonText: 'Sign Up'),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/loginPage');
+              },
+              child: const Padding(
+                padding: kDefaultPadding,
+                child: PrimaryButton(buttonText: 'Fuel Dealer'),
+              ),
             ),
+
             const SizedBox(
               height: 20,
             ),
