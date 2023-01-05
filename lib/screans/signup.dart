@@ -108,6 +108,18 @@ class SignUpScreen extends StatelessWidget {
                 child: PrimaryButton(buttonText: 'Customer'),
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/loginPage');
+              },
+              child: const Padding(
+                padding: kDefaultPadding,
+                child: PrimaryButton(buttonText: 'Fuel Dealer'),
+              ),
+            ),
 
             const SizedBox(
               height: 20,
