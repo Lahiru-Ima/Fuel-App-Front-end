@@ -58,8 +58,8 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
             const SizedBox(height: 20),
             const Image(
               image: AssetImage('images/arrival.png'),
-              height: 400,
-              width: 300,
+              height: 300,
+              width: 200,
             ),
             ElevatedButton(
               onPressed: _selectTime,
