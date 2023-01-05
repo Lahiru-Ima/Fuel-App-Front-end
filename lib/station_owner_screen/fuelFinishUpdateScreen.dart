@@ -63,7 +63,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 50),
+              SizedBox(height: 20),
               const Image(
                 image: AssetImage('images/finish.png'),
                 height: 400,
