@@ -35,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Already a member?',
+                    'Already Have an account?',
                     style: subTitle,
                   ),
                   const SizedBox(
