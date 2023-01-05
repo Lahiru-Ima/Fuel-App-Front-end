@@ -6,7 +6,7 @@ import 'package:fuel_app/theme.dart';
 import '../DashBoardPage/productScreen.dart';
 import '../screans/login.dart';
 import '../screans/selectVehicle.dart';
-import '../station_owner_screen/fuelArrivalUpdateScreen.dart';
+import '../station_owner_screen/fuelStatusUpdateScreen.dart';
 import '../station_owner_screen/fuelFinishUpdateScreen.dart';
 import '../userOnQueue/queueUpdateScreen.dart';
 
@@ -23,7 +23,7 @@ class _NavBarState extends State<NavBar> {
     const productScreen(),
     const SelectVehicle(),
     const QueueUpdate(),
-    FuelArrivalUpdate(),
+    FuelStatusUpdate(),
     FuelFinishUpdate(),
     //FuelFinishUpdate(),
 

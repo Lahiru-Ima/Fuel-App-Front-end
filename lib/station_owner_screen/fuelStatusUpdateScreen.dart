@@ -3,14 +3,14 @@ import 'package:fuel_app/theme.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
-class FuelArrivalUpdate extends StatefulWidget {
-  const FuelArrivalUpdate({super.key});
+class FuelStatusUpdate extends StatefulWidget {
+  const FuelStatusUpdate({super.key});
 
   @override
-  State<FuelArrivalUpdate> createState() => _FuelArrivalUpdateState();
+  State<FuelStatusUpdate> createState() => _FuelStatusUpdateState();
 }
 
-class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
+class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
   TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
   void updateArrivalTime() async {
