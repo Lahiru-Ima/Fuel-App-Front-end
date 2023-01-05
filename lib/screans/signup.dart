@@ -105,9 +105,10 @@ class SignUpScreen extends StatelessWidget {
               },
               child: const Padding(
                 padding: kDefaultPadding,
-                child: PrimaryButton(buttonText: 'Sign Up'),
+                child: PrimaryButton(buttonText: 'Customer'),
               ),
             ),
+
             const SizedBox(
               height: 20,
             ),
