@@ -58,44 +58,46 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(height: 50),
-            const Image(
-              image: AssetImage('images/finish.png'),
-              height: 400,
-              width: 300,
-            ),
-            ElevatedButton(
-              onPressed: _selectTime,
-              child: Text('Update Fuel Finish Time'),
-              style: ElevatedButton.styleFrom(
-                primary: kPrimaryColor,
-                //primary: Colors.purple,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(40.0),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: 50),
+              const Image(
+                image: AssetImage('images/finish.png'),
+                height: 400,
+                width: 300,
+              ),
+              ElevatedButton(
+                onPressed: _selectTime,
+                child: Text('Update Fuel Finish Time'),
+                style: ElevatedButton.styleFrom(
+                  primary: kPrimaryColor,
+                  //primary: Colors.purple,
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold
+                  ),
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(40.0),
+                  ),
                 ),
               ),
-            ),
-            successAlert,
-            SizedBox(height: 40),
-            Center(
-              child: Text(
-                'Fuel Finish Time:\n       ${_time.format(context)}',
-                style: TextStyle(
-                  fontSize: 25,
-                  //fontWeight: FontWeight.bold
+              successAlert,
+              SizedBox(height: 40),
+              Center(
+                child: Text(
+                  'Fuel Finish Time:\n       ${_time.format(context)}',
+                  style: TextStyle(
+                    fontSize: 25,
+                    //fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
