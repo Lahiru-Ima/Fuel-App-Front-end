@@ -15,8 +15,8 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildInputForm('First Name', false),
-        buildInputForm('Last Name', false),
+        buildInputForm('User Name', false),
+        // buildInputForm('Last Name', false),
         buildInputForm('Email', false),
         buildInputForm('Phone', false),
         buildInputForm('Password', true),
