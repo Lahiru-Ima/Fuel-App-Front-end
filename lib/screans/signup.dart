@@ -43,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/registerPage');
+                      Navigator.pushNamed(context, '/loginPage');
                       // Navigator.push(
                       //     context,
                       //     MaterialPageRoute(
