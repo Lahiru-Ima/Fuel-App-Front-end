@@ -7,7 +7,6 @@ import '../widgets/primary_button.dart';
 import '../widgets/signup_form.dart';
 import 'login.dart';
 
-
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -44,10 +43,11 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LogInScreen()));
+                      Navigator.pushNamed(context, '/registerPage');
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => const LogInScreen()));
                     },
                     child: Text(
                       'Log In',
