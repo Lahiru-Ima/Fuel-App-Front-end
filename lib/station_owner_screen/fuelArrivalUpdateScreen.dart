@@ -13,25 +13,27 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
   TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
   void selectArrivalTime() async {
-    final TimeOfDay? newTime = await showTimePicker(
+    final arrivalTime = await showTimePicker(
       context: context,
       initialTime: _time,
     );
-    if (newTime != null) {
+    if (arrivalTime != null) {
       setState(() {
-        _time = newTime;
+        _time = arrivalTime;
+        print(_time.hour);
       });
     }
   }
 
-    void selectFinishedTime() async {
-    final TimeOfDay? newTime = await showTimePicker(
+  void selectFinishedTime() async {
+    final TimeOfDay? finishedTime = await showTimePicker(
       context: context,
       initialTime: _time,
     );
-    if (newTime != null) {
+    if (finishedTime != null) {
       setState(() {
-        _time = newTime;
+        _time = finishedTime;
+        print(_time.hour);
       });
     }
   }
@@ -48,7 +50,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
         );
       },
       title: 'Are you sure?',
-      text: 'Conform Update',
+      text: 'Confirm Update',
       leadingIcon: const Icon(
         Icons.question_mark_outlined,
         color: Colors.red,
@@ -58,7 +60,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          "Fuel Arrival Update",
+          "Fuel Status Update",
         ),
         backgroundColor: kPrimaryColor,
       ),
@@ -73,7 +75,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
               width: 200,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: kPrimaryColor,
                 //primary: Colors.purple,
@@ -133,15 +135,15 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
               height: 20,
             ),
             successAlert,
-            const SizedBox(height: 10),
-            Center(
-              child: Text(
-                'Fuel Arrival Time:\n        ${_time.format(context)}',
-                style: const TextStyle(fontSize: 25, color: kSecondaryColor
-                    //fontWeight: FontWeight.bold
-                    ),
-              ),
-            ),
+            // const SizedBox(height: 10),
+            // Center(
+            //   child: Text(
+            //     'Fuel Arrival Time:\n        ${_time.format(context)}',
+            //     style: const TextStyle(fontSize: 25, color: kSecondaryColor
+            //         //fontWeight: FontWeight.bold
+            //         ),
+            //   ),
+            // ),
           ],
         ),
       ),
