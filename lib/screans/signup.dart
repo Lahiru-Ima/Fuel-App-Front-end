@@ -77,16 +77,16 @@ class SignUpScreen extends StatelessWidget {
                 text: 'Agree to terms and conditions.',
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Padding(
-              padding: kDefaultPadding,
-              child: CheckBox(
-                'I have at least 18 years old.',
-                text: 'I have at least 18 years old.',
-              ),
-            ),
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            // const Padding(
+            //   padding: kDefaultPadding,
+            //   child: CheckBox(
+            //     'I have at least 18 years old.',
+            //     text: 'I have at least 18 years old.',
+            //   ),
+            // ),
             const SizedBox(
               height: 20,
             ),
