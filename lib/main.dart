@@ -44,7 +44,7 @@ class FuelApp extends StatelessWidget {
         routes: {
           '/Dashbody': (context) => Body(),
           '/selectNearestShed': (context) => SearchNearestShed(),
-          '/registerPage': (context) => SignUpScreen(),
+          '/loginPage': (context) => LogInScreen(),
         });
   }
 }
