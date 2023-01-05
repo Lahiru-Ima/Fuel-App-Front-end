@@ -10,36 +10,39 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/selectNearestShed');
-            },
-            child: Text("Search Nearest Fuel station")),
-        SearchBox(
-          onChanged: (value) {},
-        ),
-        const CategoryList(),
-        const SizedBox(height: 1),
-        Expanded(
-            child: Stack(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 90),
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40))),
-            ),
-            ListView.builder(
-              itemCount: 3,
-              itemBuilder: ((context, index) => const ProductCard()),
-            )
-          ],
-        ))
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          SearchBox(
+            onChanged: (value) {},
+          ),
+          const CategoryList(),
+          const SizedBox(height: 1),
+          Expanded(
+              child: Stack(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 90),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40))),
+              ),
+              ListView.builder(
+                itemCount: 3,
+                itemBuilder: ((context, index) => const ProductCard()),
+              )
+            ],
+          )),
+          ElevatedButton(
+              // style: ButtonStyle(backgroundColor: Colors.amber),
+              onPressed: () {
+                Navigator.pushNamed(context, '/selectNearestShed');
+              },
+              child: Text("Search Nearest Fuel station")),
+        ],
+      ),
     );
   }
 }
