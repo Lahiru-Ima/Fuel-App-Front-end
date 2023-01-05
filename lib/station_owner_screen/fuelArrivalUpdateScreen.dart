@@ -1,17 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
 import 'package:quickalert/quickalert.dart';
 
 class FuelArrivalUpdate extends StatefulWidget {
+  const FuelArrivalUpdate({super.key});
+
   @override
   State<FuelArrivalUpdate> createState() => _FuelArrivalUpdateState();
 }
 
-class _FuelArrivalUpdate {}
-
 class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
-  TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
+  TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
   void _selectTime() async {
     final TimeOfDay? newTime = await showTimePicker(
@@ -25,6 +24,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     //Success alert builder
     final successAlert = buildButton(
@@ -37,7 +37,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
       },
       title: 'Are you sure?',
       text: 'Conform Update',
-      leadingIcon: Icon(
+      leadingIcon: const Icon(
         Icons.question_mark_outlined,
         color: Colors.red,
       ),
@@ -45,23 +45,17 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Fuel Arrival Update",
         ),
         backgroundColor: kPrimaryColor,
-        // backgroundColor: Color.fromARGB(255, 201, 157, 216),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(100),
-          ),
-        ),
       ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             const Image(
               image: AssetImage('images/arrival.png'),
               height: 400,
@@ -69,26 +63,27 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
             ),
             ElevatedButton(
               onPressed: _selectTime,
-              child: Text('Update Fuel Arrival Time'),
               style: ElevatedButton.styleFrom(
                 primary: kPrimaryColor,
                 //primary: Colors.purple,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                textStyle: const TextStyle(
                   fontSize: 20,
                   //fontWeight: FontWeight.bold
                 ),
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(40.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
               ),
+              child: const Text('Update Fuel Arrival Time'),
             ),
             successAlert,
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             Center(
               child: Text(
                 'Fuel Arrival Time:\n        ${_time.format(context)}',
-                style: TextStyle(fontSize: 25, color: kSecondaryColor
+                style: const TextStyle(fontSize: 25, color: kSecondaryColor
                     //fontWeight: FontWeight.bold
                     ),
               ),
