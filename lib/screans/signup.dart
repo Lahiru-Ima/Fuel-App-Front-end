@@ -99,9 +99,14 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: kDefaultPadding,
-              child: PrimaryButton(buttonText: 'Sign Up'),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/loginPage');
+              },
+              child: const Padding(
+                padding: kDefaultPadding,
+                child: PrimaryButton(buttonText: 'Sign Up'),
+              ),
             ),
             const SizedBox(
               height: 20,
