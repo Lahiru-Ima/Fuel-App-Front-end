@@ -35,7 +35,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
         QuickAlert.show(
           context: context,
           type: QuickAlertType.success,
-          text: '',
+          text: 'Fuel reserves are exhausted.',
         );
       },
       title: 'Are you sure?',
