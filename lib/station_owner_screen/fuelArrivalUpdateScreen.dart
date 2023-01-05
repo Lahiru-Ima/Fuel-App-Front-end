@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
+import 'package:quickalert/quickalert.dart';
 
 class FuelArrivalUpdate extends StatefulWidget {
   @override
@@ -25,9 +26,28 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
   }
 
   Widget build(BuildContext context) {
+    //Success alert builder
+    final successAlert = buildButton(
+      onTap: () {
+        QuickAlert.show(
+          context: context,
+          type: QuickAlertType.success,
+          text: 'Time Update Successfully!',
+        );
+      },
+      title: 'Are you sure?',
+      text: 'Conform Update',
+      leadingIcon: Icon(
+        Icons.question_mark_outlined,
+        color: Colors.red,
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fuel Arrival Update"),
+        centerTitle: true,
+        title: Text(
+          "Fuel Arrival Update",
+        ),
         backgroundColor: kPrimaryColor,
         // backgroundColor: Color.fromARGB(255, 201, 157, 216),
         shape: RoundedRectangleBorder(
@@ -41,7 +61,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             const Image(
               image: AssetImage('images/arrival.png'),
               height: 400,
@@ -63,6 +83,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
                 ),
               ),
             ),
+            successAlert,
             SizedBox(height: 40),
             Center(
               child: Text(
@@ -77,4 +98,30 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
       ),
     );
   }
+}
+
+//CUstom button
+Card buildButton({
+  required onTap,
+  required title,
+  required text,
+  required leadingIcon,
+}) {
+  return Card(
+    shape: const StadiumBorder(),
+    margin: const EdgeInsets.symmetric(
+      horizontal: 20,
+    ),
+    clipBehavior: Clip.antiAlias,
+    elevation: 1,
+    child: ListTile(
+      onTap: onTap,
+      leading: leadingIcon,
+      title: Text(title ?? ""),
+      subtitle: Text(text ?? ""),
+      trailing: const Icon(
+        Icons.keyboard_arrow_right_rounded,
+      ),
+    ),
+  );
 }
