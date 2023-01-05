@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../theme.dart';
 import '../components/splash_content.dart';
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class SplashBody extends StatefulWidget {
+  const SplashBody({Key? key}) : super(key: key);
 
   @override
-  State<Body> createState() => _BodyState();
+  State<SplashBody> createState() => _SplashBodyState();
 }
 
-class _BodyState extends State<Body> {
+class _SplashBodyState extends State<SplashBody> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
