@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
+
+import 'fuelArrivalUpdateScreen.dart';
 
 class FuelFinishUpdate extends StatefulWidget {
   @override
@@ -25,8 +29,25 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
   }
 
   Widget build(BuildContext context) {
+    //Success alert builder
+    final successAlert = buildButton(
+      onTap: () {
+        QuickAlert.show(
+          context: context,
+          type: QuickAlertType.success,
+          text: '',
+        );
+      },
+      title: 'Are you sure?',
+      text: 'Conform Update',
+      leadingIcon: Icon(
+        Icons.question_mark_outlined,
+        color: Colors.red,
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Fuel Finish Update"),
         backgroundColor: kPrimaryColor,
 
@@ -63,6 +84,7 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
                 ),
               ),
             ),
+            successAlert,
             SizedBox(height: 40),
             Center(
               child: Text(
