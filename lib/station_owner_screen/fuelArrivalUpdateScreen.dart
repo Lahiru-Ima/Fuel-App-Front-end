@@ -24,6 +24,18 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
     }
   }
 
+    void selectFinishedTime() async {
+    final TimeOfDay? newTime = await showTimePicker(
+      context: context,
+      initialTime: _time,
+    );
+    if (newTime != null) {
+      setState(() {
+        _time = newTime;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     //Success alert builder
@@ -101,7 +113,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: selectFinishedTime,
               style: ElevatedButton.styleFrom(
                 backgroundColor: kPrimaryColor,
                 //primary: Colors.purple,
