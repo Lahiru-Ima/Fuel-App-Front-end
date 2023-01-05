@@ -26,6 +26,22 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
   }
 
   Widget build(BuildContext context) {
+    //Success alert builder
+    final successAlert = buildButton(
+      onTap: () {
+        QuickAlert.show(
+          context: context,
+          type: QuickAlertType.success,
+          text: 'Time Update Successfully!',
+        );
+      },
+      title: 'Are you sure?',
+      text: 'Conform Update',
+      leadingIcon: Icon(
+        Icons.question_mark_outlined,
+        color: Colors.red,
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -67,7 +83,7 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
                 ),
               ),
             ),
-            // successAlert,
+            successAlert,
             SizedBox(height: 40),
             Center(
               child: Text(
