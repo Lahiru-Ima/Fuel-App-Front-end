@@ -38,8 +38,10 @@ class FuelApp extends StatelessWidget {
         // home: NavBar(),
         // home: SearchNearestShed(),
         //home: const LogInScreen(),
+        // home: Body(),
         routes: {
           '/Dashbody': (context) => Body(),
+          '/selectNearestShed': (context) => SearchNearestShed(),
         });
   }
 }

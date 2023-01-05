@@ -29,65 +29,67 @@ class _SplashBodyState extends State<SplashBody> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Expanded(
-              flex: 3,
-              child: PageView.builder(
-                onPageChanged: (value) {
-                  setState(() {
-                    currentPage = value;
-                  });
-                },
-                itemCount: splashData.length,
-                itemBuilder: (context, index) => SplashContent(
-                  text: splashData[index]['text'].toString(),
-                  image: splashData[index]['image'].toString(),
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              Expanded(
+                flex: 3,
+                child: PageView.builder(
+                  onPageChanged: (value) {
+                    setState(() {
+                      currentPage = value;
+                    });
+                  },
+                  itemCount: splashData.length,
+                  itemBuilder: (context, index) => SplashContent(
+                    text: splashData[index]['text'].toString(),
+                    image: splashData[index]['image'].toString(),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      splashData.length,
-                      (index) => buildDot(index: index),
+              Expanded(
+                flex: 2,
+                child: Column(
+                  children: [
+                    Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        splashData.length,
+                        (index) => buildDot(index: index),
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  SizedBox(
-                    width: size.width * 0.8,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(29),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kPrimaryColor,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 30),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/Dashbody');
-                        },
-                        child: Text(
-                          "Continue",
-                          style: const TextStyle(fontSize: 15),
+                    Spacer(),
+                    SizedBox(
+                      width: size.width * 0.8,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(29),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: kPrimaryColor,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 30),
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/Dashbody');
+                          },
+                          child: Text(
+                            "Continue",
+                            style: const TextStyle(fontSize: 15),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Spacer(),
-                ],
+                    Spacer(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
