@@ -73,7 +73,9 @@ class _BodyState extends State<Body> {
                           padding: const EdgeInsets.symmetric(
                               vertical: 15, horizontal: 30),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/body');
+                        },
                         child: Text(
                           "Continue",
                           style: const TextStyle(fontSize: 15),
