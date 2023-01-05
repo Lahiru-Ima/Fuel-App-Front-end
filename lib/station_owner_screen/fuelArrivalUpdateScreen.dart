@@ -12,7 +12,7 @@ class FuelArrivalUpdate extends StatefulWidget {
 class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
   TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
-  void _selectTime() async {
+  void selectArrivalTime() async {
     final TimeOfDay? newTime = await showTimePicker(
       context: context,
       initialTime: _time,
@@ -53,33 +53,75 @@ class _FuelArrivalUpdateState extends State<FuelArrivalUpdate> {
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
             const Image(
               image: AssetImage('images/arrival.png'),
-              height: 300,
+              height: 250,
               width: 200,
             ),
             ElevatedButton(
-              onPressed: _selectTime,
+              onPressed: (){},
               style: ElevatedButton.styleFrom(
-                primary: kPrimaryColor,
+                backgroundColor: kPrimaryColor,
                 //primary: Colors.purple,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
                 textStyle: const TextStyle(
                   fontSize: 20,
                   //fontWeight: FontWeight.bold
                 ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40.0),
+                  borderRadius: BorderRadius.circular(29),
+                ),
+              ),
+              child: const Text('Select Fuel Type'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: selectArrivalTime,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kPrimaryColor,
+                //primary: Colors.purple,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+                textStyle: const TextStyle(
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(29),
                 ),
               ),
               child: const Text('Update Fuel Arrival Time'),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: (){},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: kPrimaryColor,
+                //primary: Colors.purple,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+                textStyle: const TextStyle(
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(29),
+                ),
+              ),
+              child: const Text('Update Fuel Finished Time'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             successAlert,
-            const SizedBox(height: 40),
+            const SizedBox(height: 10),
             Center(
               child: Text(
                 'Fuel Arrival Time:\n        ${_time.format(context)}',
