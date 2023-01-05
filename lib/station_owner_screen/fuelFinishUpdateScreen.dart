@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
+
+import 'fuelArrivalUpdateScreen.dart';
 
 class FuelFinishUpdate extends StatefulWidget {
   @override
@@ -25,8 +29,25 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
   }
 
   Widget build(BuildContext context) {
+    //Success alert builder
+    final successAlert = buildButton(
+      onTap: () {
+        QuickAlert.show(
+          context: context,
+          type: QuickAlertType.success,
+          text: 'Fuel reserves are exhausted.',
+        );
+      },
+      title: 'Are you sure?',
+      text: 'Conform Update',
+      leadingIcon: Icon(
+        Icons.question_mark_outlined,
+        color: Colors.red,
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Fuel Finish Update"),
         backgroundColor: kPrimaryColor,
 
@@ -37,43 +58,46 @@ class _FuelFinishUpdateState extends State<FuelFinishUpdate> {
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(height: 50),
-            const Image(
-              image: AssetImage('images/finish.png'),
-              height: 400,
-              width: 300,
-            ),
-            ElevatedButton(
-              onPressed: _selectTime,
-              child: Text('Update Fuel Finish Time'),
-              style: ElevatedButton.styleFrom(
-                primary: kPrimaryColor,
-                //primary: Colors.purple,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(40.0),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              const Image(
+                image: AssetImage('images/finish.png'),
+                height: 400,
+                width: 300,
+              ),
+              ElevatedButton(
+                onPressed: _selectTime,
+                child: Text('Update Fuel Finish Time'),
+                style: ElevatedButton.styleFrom(
+                  primary: kPrimaryColor,
+                  //primary: Colors.purple,
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold
+                  ),
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(40.0),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 40),
-            Center(
-              child: Text(
-                'Fuel Finish Time:\n       ${_time.format(context)}',
-                style: TextStyle(
-                  fontSize: 25,
-                  //fontWeight: FontWeight.bold
+              successAlert,
+              SizedBox(height: 40),
+              Center(
+                child: Text(
+                  'Fuel Finish Time:\n       ${_time.format(context)}',
+                  style: TextStyle(
+                    fontSize: 25,
+                    //fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
