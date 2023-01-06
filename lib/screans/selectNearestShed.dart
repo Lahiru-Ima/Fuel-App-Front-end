@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -83,43 +85,41 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             FormHelper.dropDownWidgetWithLabel(
-              hintColor: kPrimaryColor,
-              textColor: Colors.white,
+                borderColor: kPrimaryColor,
+                hintColor: kPrimaryColor,
+                textColor: kPrimaryColor,
+                context,
+                "Select Province",
+                "Select Province",
+                this.provinceID,
+                this.provinces, (onChangedVal) {
+              this.provinceID = onChangedVal;
+              print("Selected value Province $provinceID");
 
-              context,
-              "Select Province",
-              "Select Province",
-              this.provinceID,
-              this.provinces,
-              (onChangedVal) {
-                this.provinceID = onChangedVal;
-                print("Selected value Province $provinceID");
+              this.districts = this
+                  .districtsMap
+                  .where(
+                    (stateItem) =>
+                        stateItem["ParentID"].toString() ==
+                        onChangedVal.toString(),
+                  )
+                  .toList();
+              this.districtId == null;
 
-                this.districts = this
-                    .districtsMap
-                    .where(
-                      (stateItem) =>
-                          stateItem["ParentID"].toString() ==
-                          onChangedVal.toString(),
-                    )
-                    .toList();
-                this.districtId == null;
+              setState(() {});
+            }, (onValidateVal) {
+              if (onValidateVal == null) {
+                return "Please select Province";
+              }
+              return null;
+            },
 
-                setState(() {});
-              },
-              (onValidateVal) {
-                if (onValidateVal == null) {
-                  return "Please select Province";
-                }
-                return null;
-              },
-              borderColor: kPrimaryColor,
-              // Theme.of(context).primaryColor,
-              borderFocusColor: Theme.of(context).primaryColor,
-              borderRadius: 10,
-              optionValue: "id",
-              optionLabel: "name",
-            ),
+                // Theme.of(context).primaryColor,
+                //borderFocusColor: Theme.of(context).primaryColor,
+                borderRadius: 10,
+                optionValue: "id",
+                optionLabel: "name",
+                borderFocusColor: kPrimaryColor),
             FormHelper.dropDownWidgetWithLabel(
               context,
               "Select District",
@@ -143,7 +143,8 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
                 return null;
               },
               borderColor: Theme.of(context).primaryColor,
-              borderFocusColor: Theme.of(context).primaryColor,
+              borderFocusColor: kPrimaryColor,
+              // borderFocusColor: Theme.of(context).primaryColor,
               borderRadius: 10,
               optionValue: "ID",
               optionLabel: "Name",

@@ -11,31 +11,13 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Welcome to Fuel House"),
+        backgroundColor: kPrimaryColor,
+      ),
       backgroundColor: kPrimaryColor,
       body: Column(
         children: [
-          SearchBox(
-            onChanged: (value) {},
-          ),
-          const CategoryList(),
-          const SizedBox(height: 1),
-          Expanded(
-              child: Stack(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 90),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
-              ),
-              ListView.builder(
-                itemCount: 3,
-                itemBuilder: ((context, index) => const ProductCard()),
-              )
-            ],
-          )),
           SizedBox(
             height: 8,
           ),
@@ -61,6 +43,54 @@ class Body extends StatelessWidget {
           SizedBox(
             height: 8,
           ),
+
+          // SearchBox(
+          //   onChanged: (value) {},
+          // ),
+          const CategoryList(),
+          const SizedBox(height: 1),
+          Expanded(
+              child: Stack(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 130),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40))),
+              ),
+              ListView.builder(
+                itemCount: 3,
+                itemBuilder: ((context, index) => const ProductCard()),
+              )
+            ],
+          )),
+          // SizedBox(
+          //   height: 8,
+          // ),
+          // ElevatedButton(
+          //   // style: ButtonStyle(backgroundColor: Colors.amber),
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, '/selectNearestShed');
+          //   },
+          //   child: Text("Search Nearest Fuel station"),
+          //   style: ElevatedButton.styleFrom(
+          //     backgroundColor: kPrimaryColor,
+          //     // primary: Colors.purple,
+          //     padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+          //     textStyle: const TextStyle(
+          //       fontSize: 20,
+          //       //fontWeight: FontWeight.bold
+          //     ),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(40.0),
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: 8,
+          // ),
         ],
       ),
     );
@@ -77,7 +107,7 @@ class ProductCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.symmetric(
-        horizontal: 30,
+        horizontal: 50,
         vertical: 30,
       ),
       height: 160,

@@ -77,7 +77,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
                       //fontWeight: FontWeight.bold
                     ),
                     dropdownColor: kPrimaryColor,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.white, // <-- SEE HERE
                     ),
