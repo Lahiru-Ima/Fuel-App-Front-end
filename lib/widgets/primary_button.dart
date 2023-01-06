@@ -4,7 +4,9 @@ import '../theme.dart';
 class PrimaryButton extends StatelessWidget {
   final String buttonText;
   // ignore: use_key_in_widget_constructors
-  const PrimaryButton({required this.buttonText});
+  const PrimaryButton({
+    required this.buttonText,
+  });
   @override
   Widget build(BuildContext context) {
     return Center(
