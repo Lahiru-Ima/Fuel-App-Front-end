@@ -50,6 +50,7 @@ class FuelApp extends StatelessWidget {
           '/customerLogin': (context) => CustomerLogin(),
           '/dashBoard': (context) => Body(),
           '/fuelStateUpdate': (context) => FuelStatusUpdate(),
+          '/joinQueue': (context) => QueueUpdate(),
         });
   }
 }
