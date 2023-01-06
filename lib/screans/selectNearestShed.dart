@@ -92,7 +92,7 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
               SizedBox(height: 20),
               const Image(
                 image: AssetImage('images/fuel station.png'),
-                height: 400,
+                height: 300,
                 width: 300,
               ),
               //mainAxisAlignment: MainAxisAlignment.center,
