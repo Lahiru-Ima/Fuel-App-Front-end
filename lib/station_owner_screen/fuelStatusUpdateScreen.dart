@@ -27,6 +27,15 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
     }
   }
 
+  //select fuel type
+  // bool _isChecked = false;
+
+  // void _onChanged(bool? value) {
+  //   setState(() {
+  //     _isChecked = value!;
+  //   });
+  // }
+
   void updateFinishedTime() async {
     final TimeOfDay? finishedTime = await showTimePicker(
       context: context,
@@ -106,6 +115,16 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               ),
               child: const Text('Select Fuel Type'),
             ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     // handle button press
+            //   },
+            //   child: Text('Elevated Button'),
+            // ),
+            // Checkbox(
+            //   value: _isChecked,
+            //   onChanged: _onChanged,
+            // ),
             const SizedBox(
               height: 20,
             ),
