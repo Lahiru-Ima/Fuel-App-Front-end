@@ -1,20 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import '../../theme.dart';
-import '../components/splash_content.dart';
+import 'onbording_content.dart';
 
-class SplashBody extends StatefulWidget {
-  const SplashBody({Key? key}) : super(key: key);
+class OnbordingBody extends StatefulWidget {
+  const OnbordingBody({Key? key}) : super(key: key);
 
   @override
-  State<SplashBody> createState() => _SplashBodyState();
+  State<OnbordingBody> createState() => _OnbordingBodyState();
 }
 
-class _SplashBodyState extends State<SplashBody> {
+class _OnbordingBodyState extends State<OnbordingBody> {
   int currentPage = 0;
   late PageController _controller;
 
-  List<Map<String, String>> splashData = [
+  List<Map<String, String>> onbordingData = [
     {
       "text": "Provide easy-to-use and convenient \nservices to the customers",
       "image": "images/splash_1.png"
@@ -60,10 +60,10 @@ class _SplashBodyState extends State<SplashBody> {
                       currentPage = value;
                     });
                   },
-                  itemCount: splashData.length,
-                  itemBuilder: (context, index) => SplashContent(
-                    text: splashData[index]['text'].toString(),
-                    image: splashData[index]['image'].toString(),
+                  itemCount: onbordingData.length,
+                  itemBuilder: (context, index) => OnbordingContent(
+                    text: onbordingData[index]['text'].toString(),
+                    image: onbordingData[index]['image'].toString(),
                   ),
                 ),
               ),
@@ -75,7 +75,7 @@ class _SplashBodyState extends State<SplashBody> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        splashData.length,
+                        onbordingData.length,
                         (index) => buildDot(index: index),
                       ),
                     ),
@@ -91,7 +91,7 @@ class _SplashBodyState extends State<SplashBody> {
                                 vertical: 15, horizontal: 30),
                           ),
                           onPressed: () {
-                            if (currentPage == splashData.length - 1) {
+                            if (currentPage == onbordingData.length - 1) {
                               Navigator.pushNamed(context, '/registerPage');
                             }
                             _controller.nextPage(
@@ -99,7 +99,7 @@ class _SplashBodyState extends State<SplashBody> {
                                 curve: Curves.bounceIn);
                           },
                           child: Text(
-                            currentPage == splashData.length - 1
+                            currentPage == onbordingData.length - 1
                                 ? "Continue"
                                 : "Next",
                             style: const TextStyle(fontSize: 15),

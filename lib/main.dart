@@ -15,7 +15,7 @@ import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
 import 'package:fuel_app/userOnQueue/queueUpdateScreen.dart';
 import 'package:fuel_app/widgets/navigationBar.dart';
 
-import 'SplashScreen/components/body.dart';
+import 'OnbordingScreen/components/body.dart';
 //import 'DashBoardPage/DashBoardPage.dart';
 
 void main() {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fuel_app/SplashScreen/components/body.dart';
+import 'package:fuel_app/OnbordingScreen/components/body.dart';
 import 'package:fuel_app/screans/landing/util_functions.dart';
 
 class LandingPage extends StatefulWidget {
@@ -14,7 +14,7 @@ class _LandingPageState extends State<LandingPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
-      UtilFunctions.navigation(const SplashBody(), context);
+      UtilFunctions.navigation(const OnbordingBody(), context);
     });
   }
 
