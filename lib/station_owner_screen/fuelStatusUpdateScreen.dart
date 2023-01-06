@@ -126,7 +126,8 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                   onTap: () {
                     setState(() {
                       showModalBottomSheet(
-                          backgroundColor: Colors.transparent,
+                          // backgroundColor: Colors.transparent,
+                          backgroundColor: kDarkGreyColor,
                           barrierColor: Colors.transparent,
                           context: context,
                           builder: (_) {
