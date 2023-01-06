@@ -153,9 +153,7 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                                         print(_fuelType);
                                       }),
                                       child: PrimaryButton(
-                                        // backgroundColor: AppColors.mainColor,
                                         buttonText: "Petrol",
-                                        // textColor: Colors.white,
                                       ),
                                     ),
                                     SizedBox(
@@ -170,9 +168,7 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                                         print(_fuelType);
                                       }),
                                       child: PrimaryButton(
-                                        // backgroundColor: AppColors.mainColor,
                                         buttonText: "Diesel",
-                                        // textColor: Colors.white,
                                       ),
                                     ),
                                   ],
