@@ -141,18 +141,39 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    PrimaryButton(
-                                      // backgroundColor: AppColors.mainColor,
-                                      buttonText: "Petrol",
-                                      // textColor: Colors.white,
+                                    GestureDetector(
+                                      onTap: (() {
+                                        // value:
+                                        // _fuelType;
+
+                                        _fuelType = "Petrol";
+
+                                        onchanged:
+                                        _onchanged;
+                                        print(_fuelType);
+                                      }),
+                                      child: PrimaryButton(
+                                        // backgroundColor: AppColors.mainColor,
+                                        buttonText: "Petrol",
+                                        // textColor: Colors.white,
+                                      ),
                                     ),
                                     SizedBox(
                                       height: 15,
                                     ),
-                                    PrimaryButton(
-                                      // backgroundColor: AppColors.mainColor,
-                                      buttonText: "Diesel",
-                                      // textColor: Colors.white,
+                                    GestureDetector(
+                                      onTap: (() {
+                                        _fuelType = "Diesel";
+
+                                        onchanged:
+                                        _onchanged;
+                                        print(_fuelType);
+                                      }),
+                                      child: PrimaryButton(
+                                        // backgroundColor: AppColors.mainColor,
+                                        buttonText: "Diesel",
+                                        // textColor: Colors.white,
+                                      ),
                                     ),
                                   ],
                                 ),
