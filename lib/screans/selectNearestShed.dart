@@ -79,6 +79,10 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Seach Nearest Fuel Station"),
+        backgroundColor: kPrimaryColor,
+      ),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

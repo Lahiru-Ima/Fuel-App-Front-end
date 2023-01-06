@@ -26,9 +26,9 @@ class Body extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/selectNearestShed');
             },
-            child: Text("Search Nearest Fuel station"),
+            child: Text("Search Nearest Fuel station  >"),
             style: ElevatedButton.styleFrom(
-              backgroundColor: kPrimaryColor,
+              backgroundColor: kSecondaryColor,
               // primary: Colors.purple,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
               textStyle: const TextStyle(
@@ -53,7 +53,7 @@ class Body extends StatelessWidget {
               child: Stack(
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 130),
+                margin: const EdgeInsets.only(top: 100),
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -107,7 +107,7 @@ class ProductCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.symmetric(
-        horizontal: 50,
+        horizontal: 30,
         vertical: 30,
       ),
       height: 160,
