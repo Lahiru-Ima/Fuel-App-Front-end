@@ -115,7 +115,7 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
             },
 
                 // Theme.of(context).primaryColor,
-                // borderFocusColor: Theme.of(context).primaryColor,
+                //borderFocusColor: Theme.of(context).primaryColor,
                 borderRadius: 10,
                 optionValue: "id",
                 optionLabel: "name",
@@ -143,7 +143,8 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
                 return null;
               },
               borderColor: Theme.of(context).primaryColor,
-              borderFocusColor: Theme.of(context).primaryColor,
+              borderFocusColor: kPrimaryColor,
+              // borderFocusColor: Theme.of(context).primaryColor,
               borderRadius: 10,
               optionValue: "ID",
               optionLabel: "Name",
