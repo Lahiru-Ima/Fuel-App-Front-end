@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
+import 'package:fuel_app/widgets/primary_button.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
@@ -113,7 +114,48 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                   borderRadius: BorderRadius.circular(29),
                 ),
               ),
-              child: const Text('Select Fuel Type'),
+              child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      showModalBottomSheet(
+                          backgroundColor: Colors.transparent,
+                          barrierColor: Colors.transparent,
+                          context: context,
+                          builder: (_) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF2e3253).withOpacity(0.4),
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              height: 300,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    PrimaryButton(
+                                      // backgroundColor: AppColors.mainColor,
+                                      buttonText: "Petrol",
+                                      // textColor: Colors.white,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    PrimaryButton(
+                                      // backgroundColor: AppColors.mainColor,
+                                      buttonText: "Diesel",
+                                      // textColor: Colors.white,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          });
+                    });
+                  },
+                  child: const Text(
+                    'Select Fuel Type',
+                  )),
             ),
             // ElevatedButton(
             //   onPressed: () {
@@ -209,4 +251,14 @@ Card buildButton({
       ),
     ),
   );
+}
+
+// import 'dart:ui';
+
+class AppColors {
+  static final mainColor = Color(0xFF202e59);
+  static final secondaryColor = Color(0xFF6c8ee3);
+  static final smallTextColor = Color(0xFF2e3253);
+  static final textHolder = Color(0xFFedf0f8);
+  static final textGray = Color(0xFFafb1b5);
 }
