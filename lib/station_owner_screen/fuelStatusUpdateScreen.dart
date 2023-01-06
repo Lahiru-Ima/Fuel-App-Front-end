@@ -27,6 +27,15 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
     }
   }
 
+  //select fuel type
+  bool _isChecked = false;
+
+  void _onChanged(bool value) {
+    setState(() {
+      _isChecked = value;
+    });
+  }
+
   void updateFinishedTime() async {
     final TimeOfDay? finishedTime = await showTimePicker(
       context: context,
