@@ -12,6 +12,8 @@ class SplashBody extends StatefulWidget {
 
 class _SplashBodyState extends State<SplashBody> {
   int currentPage = 0;
+  late PageController _controller;
+
   List<Map<String, String>> splashData = [
     {
       "text": "Provide easy-to-use and convenient \nservices to the customers",
@@ -26,6 +28,19 @@ class _SplashBodyState extends State<SplashBody> {
       "image": "images/splash_3.png"
     },
   ];
+
+  @override
+  void initState() {
+    _controller = PageController(initialPage: 0);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -39,6 +54,7 @@ class _SplashBodyState extends State<SplashBody> {
               Expanded(
                 flex: 3,
                 child: PageView.builder(
+                  controller: _controller,
                   onPageChanged: (value) {
                     setState(() {
                       currentPage = value;
@@ -75,10 +91,17 @@ class _SplashBodyState extends State<SplashBody> {
                                 vertical: 15, horizontal: 30),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/registerPage');
+                            if (currentPage == splashData.length - 1) {
+                              Navigator.pushNamed(context, '/registerPage');
+                            }
+                            _controller.nextPage(
+                                duration: Duration(milliseconds: 100),
+                                curve: Curves.bounceIn);
                           },
                           child: Text(
-                            "Continue",
+                            currentPage == splashData.length - 1
+                                ? "Continue"
+                                : "Next",
                             style: const TextStyle(fontSize: 15),
                           ),
                         ),
