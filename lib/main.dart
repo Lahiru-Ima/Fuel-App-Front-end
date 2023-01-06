@@ -6,6 +6,7 @@ import 'package:fuel_app/DashBoardPage/productScreen.dart';
 import 'package:fuel_app/Routings/routes.dart';
 import 'package:fuel_app/SplashScreen/splash_screen.dart';
 import 'package:fuel_app/screans/customerLogin.dart';
+import 'package:fuel_app/screans/landing/landing.dart';
 import 'package:fuel_app/screans/login.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
@@ -36,12 +37,13 @@ class FuelApp extends StatelessWidget {
         // home: SelectVehicle(),
         // home: FuelArrivalUpdate(),
         // home: FuelFinishUpdate(),
-        home: QueueUpdate(),
+        // home: QueueUpdate(),
         // home: SplashBody(),
         // home: NavBar(),
         // home: SearchNearestShed(),
         //home: const LogInScreen(),
         // home: Body(),
+        home: LandingPage(),
         routes: {
           '/Dashbody': (context) => Body(),
           '/selectNearestShed': (context) => SearchNearestShed(),
