@@ -75,7 +75,7 @@ class _SplashBodyState extends State<SplashBody> {
                                 vertical: 15, horizontal: 30),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/Dashbody');
+                            Navigator.pushNamed(context, '/registerPage');
                           },
                           child: Text(
                             "Continue",

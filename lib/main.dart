@@ -45,10 +45,11 @@ class FuelApp extends StatelessWidget {
         // home: Body(),
         home: LandingPage(),
         routes: {
-          '/Dashbody': (context) => Body(),
+          '/registerPage': (context) => SignUpScreen(),
           '/selectNearestShed': (context) => SearchNearestShed(),
           '/loginPage': (context) => LogInScreen(),
           '/customerLogin': (context) => CustomerLogin(),
+          '/dashBoard': (context) => Body(),
         });
   }
 }
