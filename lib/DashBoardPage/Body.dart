@@ -43,6 +43,28 @@ class Body extends StatelessWidget {
           SizedBox(
             height: 8,
           ),
+          ElevatedButton(
+            // style: ButtonStyle(backgroundColor: Colors.amber),
+            onPressed: () {
+              Navigator.pushNamed(context, '/joinQueue');
+            },
+            child: Text("Join the Queue"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: kSecondaryColor,
+              // primary: Colors.purple,
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              textStyle: const TextStyle(
+                fontSize: 20,
+                //fontWeight: FontWeight.bold
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40.0),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
 
           // SearchBox(
           //   onChanged: (value) {},
