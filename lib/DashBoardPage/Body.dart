@@ -11,7 +11,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 238, 124, 162),
+      backgroundColor: kPrimaryColor,
       body: Column(
         children: [
           SearchBox(
@@ -36,12 +36,31 @@ class Body extends StatelessWidget {
               )
             ],
           )),
+          SizedBox(
+            height: 8,
+          ),
           ElevatedButton(
-              // style: ButtonStyle(backgroundColor: Colors.amber),
-              onPressed: () {
-                Navigator.pushNamed(context, '/selectNearestShed');
-              },
-              child: Text("Search Nearest Fuel station")),
+            // style: ButtonStyle(backgroundColor: Colors.amber),
+            onPressed: () {
+              Navigator.pushNamed(context, '/selectNearestShed');
+            },
+            child: Text("Search Nearest Fuel station"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: kPrimaryColor,
+              // primary: Colors.purple,
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              textStyle: const TextStyle(
+                fontSize: 20,
+                //fontWeight: FontWeight.bold
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40.0),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
         ],
       ),
     );
