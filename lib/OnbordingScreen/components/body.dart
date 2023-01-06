@@ -1,18 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import '../../theme.dart';
-import '../components/splash_content.dart';
+import 'onbording_content.dart';
 
-class SplashBody extends StatefulWidget {
-  const SplashBody({Key? key}) : super(key: key);
+class OnbordingBody extends StatefulWidget {
+  const OnbordingBody({Key? key}) : super(key: key);
 
   @override
-  State<SplashBody> createState() => _SplashBodyState();
+  State<OnbordingBody> createState() => _OnbordingBodyState();
 }
 
-class _SplashBodyState extends State<SplashBody> {
+class _OnbordingBodyState extends State<OnbordingBody> {
   int currentPage = 0;
-  List<Map<String, String>> splashData = [
+  late PageController _controller;
+
+  List<Map<String, String>> onbordingData = [
     {
       "text": "Provide easy-to-use and convenient \nservices to the customers",
       "image": "images/splash_1.png"
@@ -26,6 +28,19 @@ class _SplashBodyState extends State<SplashBody> {
       "image": "images/splash_3.png"
     },
   ];
+
+  @override
+  void initState() {
+    _controller = PageController(initialPage: 0);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -39,15 +54,16 @@ class _SplashBodyState extends State<SplashBody> {
               Expanded(
                 flex: 3,
                 child: PageView.builder(
+                  controller: _controller,
                   onPageChanged: (value) {
                     setState(() {
                       currentPage = value;
                     });
                   },
-                  itemCount: splashData.length,
-                  itemBuilder: (context, index) => SplashContent(
-                    text: splashData[index]['text'].toString(),
-                    image: splashData[index]['image'].toString(),
+                  itemCount: onbordingData.length,
+                  itemBuilder: (context, index) => OnbordingContent(
+                    text: onbordingData[index]['text'].toString(),
+                    image: onbordingData[index]['image'].toString(),
                   ),
                 ),
               ),
@@ -59,7 +75,7 @@ class _SplashBodyState extends State<SplashBody> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        splashData.length,
+                        onbordingData.length,
                         (index) => buildDot(index: index),
                       ),
                     ),
@@ -75,10 +91,17 @@ class _SplashBodyState extends State<SplashBody> {
                                 vertical: 15, horizontal: 30),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/registerPage');
+                            if (currentPage == onbordingData.length - 1) {
+                              Navigator.pushNamed(context, '/registerPage');
+                            }
+                            _controller.nextPage(
+                                duration: Duration(milliseconds: 100),
+                                curve: Curves.bounceIn);
                           },
                           child: Text(
-                            "Continue",
+                            currentPage == onbordingData.length - 1
+                                ? "Continue"
+                                : "Next",
                             style: const TextStyle(fontSize: 15),
                           ),
                         ),

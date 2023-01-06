@@ -4,7 +4,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
 import 'package:fuel_app/Routings/routes.dart';
-import 'package:fuel_app/SplashScreen/splash_screen.dart';
 import 'package:fuel_app/screans/customerLogin.dart';
 import 'package:fuel_app/screans/landing/landing.dart';
 import 'package:fuel_app/screans/login.dart';
@@ -16,7 +15,7 @@ import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
 import 'package:fuel_app/userOnQueue/queueUpdateScreen.dart';
 import 'package:fuel_app/widgets/navigationBar.dart';
 
-import 'SplashScreen/components/body.dart';
+import 'OnbordingScreen/components/body.dart';
 //import 'DashBoardPage/DashBoardPage.dart';
 
 void main() {
