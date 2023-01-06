@@ -83,8 +83,13 @@ class CustomerLogin extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const PrimaryButton(
-                buttonText: 'Log In',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/dashBoard');
+                },
+                child: const PrimaryButton(
+                  buttonText: 'Log In',
+                ),
               ),
               const SizedBox(
                 height: 20,

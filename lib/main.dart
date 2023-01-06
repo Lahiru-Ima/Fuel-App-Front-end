@@ -49,6 +49,7 @@ class FuelApp extends StatelessWidget {
           '/selectNearestShed': (context) => SearchNearestShed(),
           '/loginPage': (context) => LogInScreen(),
           '/customerLogin': (context) => CustomerLogin(),
+          '/dashBoard': (context) => Body(),
         });
   }
 }
