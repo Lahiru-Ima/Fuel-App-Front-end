@@ -24,7 +24,8 @@ class _NavBarState extends State<NavBar> {
     const SelectVehicle(),
     const QueueUpdate(),
     FuelStatusUpdate(),
-    FuelFinishUpdate(),
+    // FuelStatusUpdate(),
+    // FuelFinishUpdate(),
     //FuelFinishUpdate(),
 
     // Center(child: Text("Home")),
@@ -57,12 +58,16 @@ class _NavBarState extends State<NavBar> {
                 backgroundColor: kPrimaryColor),
             const BottomNavigationBarItem(
                 icon: Icon(Icons.update),
-                label: "Fuel Arrival",
+                label: "Fuel Status",
                 backgroundColor: kPrimaryColor),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.timeline),
-                label: "Fuel Finish",
-                backgroundColor: kPrimaryColor),
+            // const BottomNavigationBarItem(
+            //     icon: Icon(Icons.update),
+            //     label: "Fuel Arrival",
+            //     backgroundColor: kPrimaryColor),
+            // const BottomNavigationBarItem(
+            //     icon: Icon(Icons.timeline),
+            //     label: "Fuel Finish",
+            //     backgroundColor: kPrimaryColor),
             // BottomNavigationBarItem(
             //     icon: Icon(Icons.timeline),
             //     label: "EndTime",
