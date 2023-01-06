@@ -85,46 +85,60 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
       ),
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: 20),
+            const Image(
+              image: AssetImage('images/fuel station.png'),
+              height: 400,
+              width: 300,
+            ),
+            //mainAxisAlignment: MainAxisAlignment.center,
+
             FormHelper.dropDownWidgetWithLabel(
-                borderColor: kPrimaryColor,
-                hintColor: kPrimaryColor,
-                textColor: kPrimaryColor,
-                context,
-                "Select Province",
-                "Select Province",
-                this.provinceID,
-                this.provinces, (onChangedVal) {
-              this.provinceID = onChangedVal;
-              print("Selected value Province $provinceID");
+              borderColor: kPrimaryColor,
+              hintColor: kPrimaryColor,
+              textColor: kPrimaryColor,
+              context,
+              "Select Province",
+              "Select Province",
+              this.provinceID,
+              this.provinces,
+              (onChangedVal) {
+                this.provinceID = onChangedVal;
+                print("Selected value Province $provinceID");
 
-              this.districts = this
-                  .districtsMap
-                  .where(
-                    (stateItem) =>
-                        stateItem["ParentID"].toString() ==
-                        onChangedVal.toString(),
-                  )
-                  .toList();
-              this.districtId == null;
+                this.districts = this
+                    .districtsMap
+                    .where(
+                      (stateItem) =>
+                          stateItem["ParentID"].toString() ==
+                          onChangedVal.toString(),
+                    )
+                    .toList();
+                this.districtId == null;
 
-              setState(() {});
-            }, (onValidateVal) {
-              if (onValidateVal == null) {
-                return "Please select Province";
-              }
-              return null;
-            },
+                setState(() {});
+              },
+              (onValidateVal) {
+                if (onValidateVal == null) {
+                  return "Please select Province";
+                }
+                return null;
+              },
 
-                // Theme.of(context).primaryColor,
-                //borderFocusColor: Theme.of(context).primaryColor,
-                borderRadius: 10,
-                optionValue: "id",
-                optionLabel: "name",
-                borderFocusColor: kPrimaryColor),
+              // Theme.of(context).primaryColor,
+              //borderFocusColor: Theme.of(context).primaryColor,
+              borderRadius: 40,
+              optionValue: "id",
+              optionLabel: "name",
+              borderFocusColor: kPrimaryColor,
+            ),
             FormHelper.dropDownWidgetWithLabel(
+              borderColor: kPrimaryColor,
+              hintColor: kPrimaryColor,
+              textColor: kPrimaryColor,
               context,
               "Select District",
               "Select District",
@@ -146,10 +160,14 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
               (onValidateVal) {
                 return null;
               },
-              borderColor: Theme.of(context).primaryColor,
+              //borderColor: Theme.of(context).primaryColor,
+
+              validationColor: kPrimaryColor,
+              //textColor: kPrimaryColor,
               borderFocusColor: kPrimaryColor,
+
               // borderFocusColor: Theme.of(context).primaryColor,
-              borderRadius: 10,
+              borderRadius: 40,
               optionValue: "ID",
               optionLabel: "Name",
             ),
