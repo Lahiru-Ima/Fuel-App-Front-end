@@ -4,7 +4,7 @@ import 'package:fuel_app/theme.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
 
-import 'fuelArrivalUpdateScreen.dart';
+import 'fuelStatusUpdateScreen.dart';
 
 class FuelFinishUpdate extends StatefulWidget {
   @override
