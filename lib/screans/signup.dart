@@ -63,11 +63,11 @@ class SignUpScreen extends StatelessWidget {
 
             Align(
               alignment: Alignment.center,
-              child: const Image(
-                image: AssetImage('images/finish.png'),
-                height: 250,
-                width: 300,
-              ),
+              // child: const Image(
+              //   image: AssetImage('images/finish.png'),
+              //   height: 250,
+              //   width: 300,
+              // ),
             ),
             const SizedBox(
               height: 10,
