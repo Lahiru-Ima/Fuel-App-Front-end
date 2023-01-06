@@ -101,7 +101,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/loginPage');
+                Navigator.pushNamed(context, '/customerLogin');
               },
               child: const Padding(
                 padding: kDefaultPadding,
