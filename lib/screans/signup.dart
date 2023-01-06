@@ -18,7 +18,7 @@ class SignUpScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 70,
+              height: 30,
             ),
             Padding(
               padding: kDefaultPadding,
