@@ -35,7 +35,7 @@ class FuelApp extends StatelessWidget {
         // home: productScreen(),
         // home: SignUpScreen(),
         // home: SelectVehicle(),
-        // home: FuelArrivalUpdate(),
+        home: FuelStatusUpdate(),
         // home: FuelFinishUpdate(),
         // home: QueueUpdate(),
         // home: SplashBody(),
@@ -43,7 +43,7 @@ class FuelApp extends StatelessWidget {
         // home: SearchNearestShed(),
         //home: const LogInScreen(),
         // home: Body(),
-        home: LandingPage(),
+        //home: LandingPage(),
         routes: {
           '/Dashbody': (context) => Body(),
           '/selectNearestShed': (context) => SearchNearestShed(),

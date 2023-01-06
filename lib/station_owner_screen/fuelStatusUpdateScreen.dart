@@ -13,6 +13,10 @@ class FuelStatusUpdate extends StatefulWidget {
 class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
   TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
+  get dropdownItems => null;
+
+  get selectedValue => null;
+
   void updateArrivalTime() async {
     final arrivalTime = await showTimePicker(
       context: context,
@@ -89,23 +93,38 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               height: 250,
               width: 200,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                //primary: Colors.purple,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(29),
-                ),
-              ),
-              child: const Text('Select Fuel Type'),
+            // ElevatedButton(
+            //   onPressed: () {},
+            //   style: ElevatedButton.styleFrom(
+            //     backgroundColor: kPrimaryColor,
+            //     //primary: Colors.purple,
+            //     padding:
+            //         const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+            //     textStyle: const TextStyle(
+            //       fontSize: 20,
+            //       //fontWeight: FontWeight.bold
+            //     ),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(29),
+            //     ),
+            //   ),
+            //   child: const Text('Select Fuel Type'),
+            // ),
+
+            DropdownButton(
+              onChanged: (value) {},
+              items: [],
             ),
+// DropdownButton(
+//       value: selectedValue,
+//       onChanged: (String? newValue){
+//         setState(() {
+//           selectedValue = newValue!;
+//         });
+//       },
+//       items: dropdownItems
+//       ),
+
             const SizedBox(
               height: 20,
             ),
