@@ -24,7 +24,7 @@ class Body extends StatelessWidget {
           ElevatedButton(
             // style: ButtonStyle(backgroundColor: Colors.amber),
             onPressed: () {
-              Navigator.pushNamed(context, '/selectNearestShed');
+              Navigator.pushNamed(context, '/joinQueue');
             },
             child: Text("Search Nearest Fuel station  >"),
             style: ElevatedButton.styleFrom(
