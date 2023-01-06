@@ -37,6 +37,14 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
   //   });
   // }
 
+  //get fuel type
+  String _fuelType = '';
+  void _onchanged(String value) {
+    setState(() {
+      _fuelType = value;
+    });
+  }
+
   void updateFinishedTime() async {
     final TimeOfDay? finishedTime = await showTimePicker(
       context: context,
