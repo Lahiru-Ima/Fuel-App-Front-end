@@ -14,6 +14,10 @@ class FuelStatusUpdate extends StatefulWidget {
 class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
   TimeOfDay _time = const TimeOfDay(hour: 7, minute: 15);
 
+  get dropdownItems => null;
+
+  get selectedValue => null;
+
   void updateArrivalTime() async {
     final arrivalTime = await showTimePicker(
       context: context,
@@ -107,92 +111,7 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               height: 250,
               width: 200,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                //primary: Colors.purple,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(29),
-                ),
-              ),
-              child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      showModalBottomSheet(
-                          // backgroundColor: Colors.transparent,
-                          backgroundColor: kDarkGreyColor,
-                          barrierColor: Colors.transparent,
-                          context: context,
-                          builder: (_) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF2e3253).withOpacity(0.4),
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              height: 300,
-                              child: Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: (() {
-                                        // value:
-                                        // _fuelType;
 
-                                        _fuelType = "Petrol";
-
-                                        onchanged:
-                                        _onchanged;
-                                        print(_fuelType);
-                                      }),
-                                      child: PrimaryButton(
-                                        buttonText: "Petrol",
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 15,
-                                    ),
-                                    GestureDetector(
-                                      onTap: (() {
-                                        _fuelType = "Diesel";
-
-                                        onchanged:
-                                        _onchanged;
-                                        print(_fuelType);
-                                      }),
-                                      child: PrimaryButton(
-                                        buttonText: "Diesel",
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          });
-                    });
-                  },
-                  child: const Text(
-                    'Select Fuel Type',
-                  )),
-            ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     // handle button press
-            //   },
-            //   child: Text('Elevated Button'),
-            // ),
-            // Checkbox(
-            //   value: _isChecked,
-            //   onChanged: _onChanged,
-            // ),
             const SizedBox(
               height: 20,
             ),

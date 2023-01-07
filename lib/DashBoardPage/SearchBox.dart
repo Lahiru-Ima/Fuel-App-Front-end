@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fuel_app/theme.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({
@@ -22,16 +23,13 @@ class SearchBox extends StatelessWidget {
         // onChanged:onChanged,
         leading: Icon(
           Icons.search,
-          color: Color.fromARGB(255, 70, 5, 98),
+          color: kPrimaryColor,
         ),
         title: TextField(
           decoration: InputDecoration(
               hintText: "Find nearest fuel station", border: InputBorder.none),
         ),
-        trailing: Icon(
-          Icons.filter_list,
-          color: Color.fromARGB(255, 70, 5, 98),
-        ),
+        trailing: Icon(Icons.filter_list, color: kPrimaryColor),
       ),
     );
   }
