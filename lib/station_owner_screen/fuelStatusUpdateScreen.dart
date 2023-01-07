@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
+import 'package:fuel_app/widgets/primary_button.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
@@ -29,6 +30,23 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
         postData();
       });
     }
+  }
+
+  //select fuel type
+  // bool _isChecked = false;
+
+  // void _onChanged(bool? value) {
+  //   setState(() {
+  //     _isChecked = value!;
+  //   });
+  // }
+
+  //get fuel type
+  String _fuelType = '';
+  void _onchanged(String value) {
+    setState(() {
+      _fuelType = value;
+    });
   }
 
   void updateFinishedTime() async {
@@ -93,37 +111,6 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               height: 250,
               width: 200,
             ),
-            // ElevatedButton(
-            //   onPressed: () {},
-            //   style: ElevatedButton.styleFrom(
-            //     backgroundColor: kPrimaryColor,
-            //     //primary: Colors.purple,
-            //     padding:
-            //         const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-            //     textStyle: const TextStyle(
-            //       fontSize: 20,
-            //       //fontWeight: FontWeight.bold
-            //     ),
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(29),
-            //     ),
-            //   ),
-            //   child: const Text('Select Fuel Type'),
-            // ),
-
-            DropdownButton(
-              onChanged: (value) {},
-              items: [],
-            ),
-// DropdownButton(
-//       value: selectedValue,
-//       onChanged: (String? newValue){
-//         setState(() {
-//           selectedValue = newValue!;
-//         });
-//       },
-//       items: dropdownItems
-//       ),
 
             const SizedBox(
               height: 20,
@@ -209,4 +196,14 @@ Card buildButton({
       ),
     ),
   );
+}
+
+// import 'dart:ui';
+
+class AppColors {
+  static final mainColor = Color(0xFF202e59);
+  static final secondaryColor = Color(0xFF6c8ee3);
+  static final smallTextColor = Color(0xFF2e3253);
+  static final textHolder = Color(0xFFedf0f8);
+  static final textGray = Color(0xFFafb1b5);
 }

@@ -42,7 +42,7 @@ class BuildButton extends StatelessWidget {
       height: mediaQuery.height * 0.06,
       width: mediaQuery.width * 0.36,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(29),
           border: Border.all(color: Colors.grey)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

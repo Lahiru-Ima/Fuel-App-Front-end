@@ -80,98 +80,100 @@ class _SearchNearestShedState extends State<SearchNearestShed> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Seach Nearest Fuel Station"),
+        title: Text("Search Nearest Fuel Station"),
         backgroundColor: kPrimaryColor,
       ),
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 20),
-            const Image(
-              image: AssetImage('images/fuel station.png'),
-              height: 400,
-              width: 300,
-            ),
-            //mainAxisAlignment: MainAxisAlignment.center,
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 20),
+              const Image(
+                image: AssetImage('images/fuel station.png'),
+                height: 300,
+                width: 300,
+              ),
+              //mainAxisAlignment: MainAxisAlignment.center,
 
-            FormHelper.dropDownWidgetWithLabel(
-              borderColor: kPrimaryColor,
-              hintColor: kPrimaryColor,
-              textColor: kPrimaryColor,
-              context,
-              "Select Province",
-              "Select Province",
-              this.provinceID,
-              this.provinces,
-              (onChangedVal) {
-                this.provinceID = onChangedVal;
-                print("Selected value Province $provinceID");
+              FormHelper.dropDownWidgetWithLabel(
+                borderColor: kPrimaryColor,
+                hintColor: kPrimaryColor,
+                textColor: kPrimaryColor,
+                context,
+                "Select Province",
+                "Select Province",
+                this.provinceID,
+                this.provinces,
+                (onChangedVal) {
+                  this.provinceID = onChangedVal;
+                  print("Selected value Province $provinceID");
 
-                this.districts = this
-                    .districtsMap
-                    .where(
-                      (stateItem) =>
-                          stateItem["ParentID"].toString() ==
-                          onChangedVal.toString(),
-                    )
-                    .toList();
-                this.districtId == null;
+                  this.districts = this
+                      .districtsMap
+                      .where(
+                        (stateItem) =>
+                            stateItem["ParentID"].toString() ==
+                            onChangedVal.toString(),
+                      )
+                      .toList();
+                  this.districtId == null;
 
-                setState(() {});
-              },
-              (onValidateVal) {
-                if (onValidateVal == null) {
-                  return "Please select Province";
-                }
-                return null;
-              },
+                  setState(() {});
+                },
+                (onValidateVal) {
+                  if (onValidateVal == null) {
+                    return "Please select Province";
+                  }
+                  return null;
+                },
 
-              // Theme.of(context).primaryColor,
-              //borderFocusColor: Theme.of(context).primaryColor,
-              borderRadius: 40,
-              optionValue: "id",
-              optionLabel: "name",
-              borderFocusColor: kPrimaryColor,
-            ),
-            FormHelper.dropDownWidgetWithLabel(
-              borderColor: kPrimaryColor,
-              hintColor: kPrimaryColor,
-              textColor: kPrimaryColor,
-              context,
-              "Select District",
-              "Select District",
-              this.districtId,
-              this.districts,
-              (onChangedVal) {
-                this.districtId = onChangedVal;
-                print("Selected value District $districtId");
+                // Theme.of(context).primaryColor,
+                //borderFocusColor: Theme.of(context).primaryColor,
+                borderRadius: 40,
+                optionValue: "id",
+                optionLabel: "name",
+                borderFocusColor: kPrimaryColor,
+              ),
+              FormHelper.dropDownWidgetWithLabel(
+                borderColor: kPrimaryColor,
+                hintColor: kPrimaryColor,
+                textColor: kPrimaryColor,
+                context,
+                "Select District",
+                "Select District",
+                this.districtId,
+                this.districts,
+                (onChangedVal) {
+                  this.districtId = onChangedVal;
+                  print("Selected value District $districtId");
 
-                this.districts = this
-                    .districtsMap
-                    .where(
-                      (stateItem) =>
-                          stateItem["ParentID"].toString() ==
-                          onChangedVal.toString(),
-                    )
-                    .toList();
-              },
-              (onValidateVal) {
-                return null;
-              },
-              //borderColor: Theme.of(context).primaryColor,
+                  this.districts = this
+                      .districtsMap
+                      .where(
+                        (stateItem) =>
+                            stateItem["ParentID"].toString() ==
+                            onChangedVal.toString(),
+                      )
+                      .toList();
+                },
+                (onValidateVal) {
+                  return null;
+                },
+                //borderColor: Theme.of(context).primaryColor,
 
-              validationColor: kPrimaryColor,
-              //textColor: kPrimaryColor,
-              borderFocusColor: kPrimaryColor,
+                validationColor: kPrimaryColor,
+                //textColor: kPrimaryColor,
+                borderFocusColor: kPrimaryColor,
 
-              // borderFocusColor: Theme.of(context).primaryColor,
-              borderRadius: 40,
-              optionValue: "ID",
-              optionLabel: "Name",
-            ),
-          ],
+                // borderFocusColor: Theme.of(context).primaryColor,
+                borderRadius: 40,
+                optionValue: "ID",
+                optionLabel: "Name",
+              ),
+            ],
+          ),
         ),
       ),
     );

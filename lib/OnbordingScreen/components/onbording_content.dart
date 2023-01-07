@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class SplashContent extends StatelessWidget {
-  const SplashContent({
+class OnbordingContent extends StatelessWidget {
+  const OnbordingContent({
     Key? key,
     required this.text,
     required this.image,

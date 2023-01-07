@@ -19,18 +19,40 @@ class Body extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 8,
+            height: 20,
           ),
           ElevatedButton(
             // style: ButtonStyle(backgroundColor: Colors.amber),
             onPressed: () {
               Navigator.pushNamed(context, '/selectNearestShed');
             },
-            child: Text("Search Nearest Fuel station  >"),
+            child: Text("Search Nearest Fuel station"),
             style: ElevatedButton.styleFrom(
               backgroundColor: kSecondaryColor,
               // primary: Colors.purple,
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+              textStyle: const TextStyle(
+                fontSize: 20,
+                //fontWeight: FontWeight.bold
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40.0),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            // style: ButtonStyle(backgroundColor: Colors.amber),
+            onPressed: () {
+              Navigator.pushNamed(context, '/joinQueue');
+            },
+            child: Text("Join To The Queue"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: kSecondaryColor,
+              // primary: Colors.purple,
+              padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
               textStyle: const TextStyle(
                 fontSize: 20,
                 //fontWeight: FontWeight.bold
