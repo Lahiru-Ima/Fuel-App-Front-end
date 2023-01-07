@@ -36,11 +36,11 @@ class FuelApp extends StatelessWidget {
         // home: SignUpScreen(),
         // home: SelectVehicle(),
         //home: FuelStatusUpdate(),
-        home: ViewQueue(),
+        //home: ViewQueue(),
         // home: FuelFinishUpdate(),
         // home: QueueUpdate(),
         // home: SplashBody(),
-        // home: NavBar(),
+        home: NavBar(),
         // home: SearchNearestShed(),
         //home: const LogInScreen(),
         // home: Body(),
@@ -53,6 +53,7 @@ class FuelApp extends StatelessWidget {
           '/dashBoard': (context) => Body(),
           '/fuelStateUpdate': (context) => FuelStatusUpdate(),
           '/joinQueue': (context) => QueueUpdate(),
+          '/viewQueue': (context) => ViewQueue(),
         });
   }
 }
