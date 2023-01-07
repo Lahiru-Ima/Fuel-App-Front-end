@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/theme.dart';
 
 class ViewQueue extends StatefulWidget {
@@ -66,24 +64,24 @@ class _ViewQueueState extends State<ViewQueue> {
                 height: 300,
                 width: 300,
               ),
-              Text(
+              const Text(
                 "Select Fuel Type Here:",
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: kSecondaryColor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(95, 8, 90, 8),
+                padding: const EdgeInsets.fromLTRB(95, 8, 90, 8),
                 decoration: BoxDecoration(
                     color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(40)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
-                child: new DropdownButtonHideUnderline(
+                child: DropdownButtonHideUnderline(
                   child: DropdownButton(
                     style: const TextStyle(
                       color: Colors.white, //<-- SEE HERE
@@ -110,26 +108,26 @@ class _ViewQueueState extends State<ViewQueue> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Text(
+              const Text(
                 "Select Fuel Station Here:",
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: kSecondaryColor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(80, 8, 80, 8),
+                padding: const EdgeInsets.fromLTRB(80, 8, 80, 8),
                 decoration: BoxDecoration(
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.circular(40),
                 ),
-                child: new DropdownButtonHideUnderline(
+                child: DropdownButtonHideUnderline(
                   child: DropdownButton(
                     style: const TextStyle(
                       color: Colors.white, //<-- SEE HERE
@@ -155,27 +153,27 @@ class _ViewQueueState extends State<ViewQueue> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Text(
+              const Text(
                 "Select Your Vehicle Type Here:",
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: kSecondaryColor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(20, 8, 10, 8),
+                padding: const EdgeInsets.fromLTRB(20, 8, 10, 8),
                 decoration: BoxDecoration(
                     color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(40)
                     //.copyWith(bottomRight: Radius.circular(0)),
                     ),
-                child: new DropdownButtonHideUnderline(
+                child: DropdownButtonHideUnderline(
                   child: DropdownButton(
                     style: const TextStyle(
                       color: Colors.white, //<-- SEE HERE
@@ -183,7 +181,7 @@ class _ViewQueueState extends State<ViewQueue> {
                       //fontWeight: FontWeight.bold
                     ),
                     dropdownColor: kPrimaryColor,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_drop_down,
                       color: Colors.white, // <-- SEE HERE
                     ),
@@ -216,21 +214,21 @@ class _ViewQueueState extends State<ViewQueue> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 _displayText!,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/queueUpdateScreen');
                 },
-                child: Text("View Queue"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kSecondaryColor,
                   padding:
@@ -242,6 +240,7 @@ class _ViewQueueState extends State<ViewQueue> {
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                 ),
+                child: const Text("View Queue"),
               ),
             ],
           ),
