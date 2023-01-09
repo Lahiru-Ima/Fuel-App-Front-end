@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
-
 class LogInForm extends StatefulWidget {
   const LogInForm({Key? key}) : super(key: key);
 
@@ -27,6 +26,14 @@ class _LogInFormState extends State<LogInForm> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
+        validator: (val) {
+          if (!(val!.isEmpty) &&
+              !RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
+                  .hasMatch(val)) {
+            return "Enter a valid email address";
+          }
+          return null;
+        },
         obscureText: pass ? _isObscure : false,
         decoration: InputDecoration(
             labelText: label,

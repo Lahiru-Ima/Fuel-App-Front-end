@@ -40,11 +40,11 @@ class FuelApp extends StatelessWidget {
         // home: FuelFinishUpdate(),
         // home: QueueUpdate(),
         // home: SplashBody(),
-        home: NavBar(),
+        // home: NavBar(),
         // home: SearchNearestShed(),
         //home: const LogInScreen(),
         // home: Body(),
-        //home: LandingPage(),
+        home: LandingPage(),
         routes: {
           '/registerPage': (context) => SignUpScreen(),
           '/selectNearestShed': (context) => SearchNearestShed(),
