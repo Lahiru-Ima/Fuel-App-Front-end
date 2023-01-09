@@ -101,71 +101,110 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
         ),
         backgroundColor: kPrimaryColor,
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+      bottomNavigationBar: Container(
+        height: 70,
+        color: kPrimaryColor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Image(
-              image: AssetImage('images/arrival.png'),
-              height: 250,
-              width: 200,
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/dashBoard');
+              },
+              icon: Icon(Icons.home),
             ),
-
-            const SizedBox(
-              height: 20,
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/viewQueue');
+              },
+              icon: Icon(Icons.car_crash_outlined),
             ),
-            ElevatedButton(
-              onPressed: updateArrivalTime,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                //primary: Colors.purple,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(29),
-                ),
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/joinQueue');
+                // Navigator.of(context)
+                //     .push(MaterialPageRoute(builder: (context) => Scan()));
+              },
+              icon: Icon(
+                Icons.queue,
               ),
-              child: const Text('Update Fuel Arrival Time'),
             ),
-            const SizedBox(
-              height: 20,
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/fuelStateUpdate');
+              },
+              icon: Icon(Icons.update),
             ),
-            ElevatedButton(
-              onPressed: updateFinishedTime,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                //primary: Colors.purple,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(29),
-                ),
-              ),
-              child: const Text('Update Fuel Finished Time'),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            successAlert,
-            // const SizedBox(height: 10),
-            // Center(
-            //   child: Text(
-            //     'Fuel Arrival Time:\n        ${_time.format(context)}',
-            //     style: const TextStyle(fontSize: 25, color: kSecondaryColor
-            //         //fontWeight: FontWeight.bold
-            //         ),
-            //   ),
-            // ),
           ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Image(
+                image: AssetImage('images/arrival.png'),
+                height: 250,
+                width: 200,
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: updateArrivalTime,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: kPrimaryColor,
+                  //primary: Colors.purple,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(29),
+                  ),
+                ),
+                child: const Text('Update Fuel Arrival Time'),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: updateFinishedTime,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: kPrimaryColor,
+                  //primary: Colors.purple,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(29),
+                  ),
+                ),
+                child: const Text('Update Fuel Finished Time'),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              successAlert,
+              // const SizedBox(height: 10),
+              // Center(
+              //   child: Text(
+              //     'Fuel Arrival Time:\n        ${_time.format(context)}',
+              //     style: const TextStyle(fontSize: 25, color: kSecondaryColor
+              //         //fontWeight: FontWeight.bold
+              //         ),
+              //   ),
+              // ),
+            ],
+          ),
         ),
       ),
     );
