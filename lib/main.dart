@@ -10,6 +10,7 @@ import 'package:fuel_app/screans/login.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
 import 'package:fuel_app/screans/signup.dart';
+import 'package:fuel_app/screens/auth/auth_screen.dart';
 import 'package:fuel_app/station_owner_screen/fuelStatusUpdateScreen.dart';
 import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
 import 'package:fuel_app/userOnQueue/queueUpdateScreen.dart';
@@ -46,7 +47,7 @@ class FuelApp extends StatelessWidget {
         // home: Body(),
         home: LandingPage(),
         routes: {
-          '/registerPage': (context) => SignUpScreen(),
+          '/registerPage': (context) => AuthScreen(),
           '/selectNearestShed': (context) => SearchNearestShed(),
           '/loginPage': (context) => LogInScreen(),
           '/customerLogin': (context) => CustomerLogin(),
