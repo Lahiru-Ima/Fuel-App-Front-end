@@ -131,7 +131,17 @@ class _AuthScreenState extends State<AuthScreen> {
           onPressed: () {
             Navigator.pushNamed(context, '/dashBoard');
           },
-          title: 'Login',
+          title: 'Customer Login',
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        SubmitButton(
+          // onPressed: () => loginController.loginWithEmail(),
+          onPressed: () {
+            Navigator.pushNamed(context, '/dashBoard');
+          },
+          title: 'Dealer Login',
         )
       ],
     );
