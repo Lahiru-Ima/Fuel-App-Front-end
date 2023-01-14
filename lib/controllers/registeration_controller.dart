@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,6 +12,7 @@ class RegisterationController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
 
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
@@ -24,7 +24,8 @@ class RegisterationController extends GetxController {
       Map body = {
         'name': nameController.text,
         'email': emailController.text.trim(),
-        'password': passwordController.text
+        'password': passwordController.text,
+        'phone': phoneController.text
       };
 
       http.Response response =
@@ -41,6 +42,7 @@ class RegisterationController extends GetxController {
           nameController.clear();
           emailController.clear();
           passwordController.clear();
+          phoneController.clear();
           Get.off(HomeScreen());
         } else {
           throw jsonDecode(response.body)["message"] ?? "Unknown Error Occured";

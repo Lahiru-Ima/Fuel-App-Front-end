@@ -52,6 +52,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       children: [
                         MaterialButton(
                           color: !isLogin.value ? Colors.white : Colors.amber,
+                          // color: !isLogin.value ? Colors.amber : Colors.white,
                           onPressed: () {
                             isLogin.value = false;
                           },
@@ -59,6 +60,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         ),
                         MaterialButton(
                           color: isLogin.value ? Colors.white : Colors.amber,
+                          // color: !isLogin.value ? Colors.amber : Colors.white,
                           onPressed: () {
                             isLogin.value = true;
                           },
@@ -87,6 +89,11 @@ class _AuthScreenState extends State<AuthScreen> {
         ),
         InputTextFieldWidget(
             registerationController.emailController, 'email address'),
+        SizedBox(
+          height: 20,
+        ),
+        InputTextFieldWidget(
+            registerationController.phoneController, 'Telephone'),
         SizedBox(
           height: 20,
         ),
