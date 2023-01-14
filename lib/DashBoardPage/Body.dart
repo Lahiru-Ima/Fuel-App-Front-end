@@ -59,26 +59,26 @@ class Body extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              // style: ButtonStyle(backgroundColor: Colors.amber),
-              onPressed: () {
-                Navigator.pushNamed(context, '/selectNearestShed');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kSecondaryColor,
-                // primary: Colors.purple,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                textStyle: const TextStyle(
-                  fontSize: 20,
-                  //fontWeight: FontWeight.bold
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40.0),
-                ),
-              ),
-              child: const Text("Search Nearest Fuel station"),
-            ),
+            // ElevatedButton(
+            //   // style: ButtonStyle(backgroundColor: Colors.amber),
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, '/selectNearestShed');
+            //   },
+            //   style: ElevatedButton.styleFrom(
+            //     backgroundColor: kSecondaryColor,
+            //     // primary: Colors.purple,
+            //     padding:
+            //         const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+            //     textStyle: const TextStyle(
+            //       fontSize: 20,
+            //       //fontWeight: FontWeight.bold
+            //     ),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(40.0),
+            //     ),
+            //   ),
+            //   child: const Text("Search Nearest Fuel station"),
+            // ),
             const SizedBox(
               height: 20,
             ),
