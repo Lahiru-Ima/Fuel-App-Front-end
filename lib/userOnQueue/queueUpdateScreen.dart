@@ -2,51 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
 import 'package:http/http.dart' as http;
 
-class QueueUpdate extends StatelessWidget {
+class QueueUpdate extends StatefulWidget {
   const QueueUpdate({super.key});
+
+  @override
+  State<QueueUpdate> createState() => _QueueUpdateState();
+}
+
+class _QueueUpdateState extends State<QueueUpdate> {
+  int _clickcount = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          title: Text('Fuel Status'),
           backgroundColor: kPrimaryColor,
-        ),
-        bottomNavigationBar: Container(
-          height: 70,
-          color: kPrimaryColor,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/dashBoard');
-                },
-                icon: Icon(Icons.home),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/viewQueue');
-                },
-                icon: Icon(Icons.car_crash_outlined),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/joinQueue');
-                  // Navigator.of(context)
-                  //     .push(MaterialPageRoute(builder: (context) => Scan()));
-                },
-                icon: Icon(
-                  Icons.queue,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/fuelStateUpdate');
-                },
-                icon: Icon(Icons.update),
-              ),
-            ],
-          ),
         ),
         body: SingleChildScrollView(
           child: SafeArea(
@@ -93,17 +64,11 @@ class QueueUpdate extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ElevatedButton(
-                    onPressed: () async {
-                      var response = await http.post(
-                          Uri.parse(
-                              "https://fuel-app-backend.up.railway.app/api/fuelQueue"),
-                          body: {
-                            "userName": "lahiru",
-                            "arrivalTime": 8.15.toString(),
-                            "departTime": 9.30.toString(),
-                            "status": "Full"
-                          });
-                      print(response.body);
+                    onPressed: () {
+                      setState(() {
+                        _clickcount++;
+                        print(_clickcount);
+                      });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: kPrimaryColor,
