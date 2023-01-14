@@ -1,12 +1,51 @@
 // ignore: file_names
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
+import 'package:http/http.dart' as http;
+// import 'package:dio/dio.dart';
 
 //import 'SearchBox.dart';
 //import 'categoryList.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({super.key});
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getFuelStationByDealer();
+  }
+
+  Future getFuelStationByDealer() async {
+    print("check");
+    var response = await http.get(Uri.parse(
+        // var response = await http.get(
+        // Uri.http("https://fuel-app-backend.up.railway.app", "api/fuelStation"));
+        'https://fuel-app-backend.up.railway.app/api/fuelStation'));
+    // getFuelStationByDealer();
+    var jasonData = jsonDecode(response.body);
+
+    // print(response.body);
+    List<User> users = [];
+
+    for (var u in jasonData) {
+      print(u);
+      User user = User(
+          u["dealer"], u["location"], u["petrolStatus"], u["dieselStatus"]);
+      users.add(user);
+    }
+
+    print(users.length);
+    return users;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,6 +144,33 @@ class Body extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
+
+            ElevatedButton(
+                onPressed: () {
+                  getFuelStationByDealer();
+                },
+                child: Text("Get Data")),
+
+            FutureBuilder(
+                future: getFuelStationByDealer(),
+                builder: (context, AsyncSnapshot snapshot) {
+                  print(snapshot);
+                  if (snapshot.data == null) {
+                    return Container(
+                      child: Center(
+                        child: Text("Loading..."),
+                      ),
+                    );
+                  } else
+                    return ListView.builder(
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (context, i) {
+                          return ListTile(
+                            // title: Text(snapshot.data[i].dealer),
+                            title: Text("geethe"),
+                          );
+                        });
+                })
 
             // SearchBox(
             //   onChanged: (value) {},
@@ -226,18 +292,6 @@ class Body extends StatelessWidget {
 //   }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
 // import 'package:flutter/material.dart';
 // import 'package:flutter/src/widgets/container.dart';
 // import 'package:flutter/src/widgets/framework.dart';
@@ -319,13 +373,8 @@ class Body extends StatelessWidget {
 //   }
 // }
 
+class User {
+  final String dealer, location, petrolStatus, dieselStatus;
 
-
-
-
-
-
-
-
-
-
+  User(this.dealer, this.location, this.petrolStatus, this.dieselStatus);
+}
