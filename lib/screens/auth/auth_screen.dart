@@ -131,7 +131,7 @@ class _AuthScreenState extends State<AuthScreen> {
           onPressed: () {
             Navigator.pushNamed(context, '/dashBoard');
           },
-          title: 'Customer Login',
+          title: 'Customer',
         ),
         SizedBox(
           height: 20,
@@ -139,9 +139,9 @@ class _AuthScreenState extends State<AuthScreen> {
         SubmitButton(
           // onPressed: () => loginController.loginWithEmail(),
           onPressed: () {
-            Navigator.pushNamed(context, '/dashBoard');
+            Navigator.pushNamed(context, '/fuelStateUpdate');
           },
-          title: 'Dealer Login',
+          title: 'Dealer',
         )
       ],
     );
