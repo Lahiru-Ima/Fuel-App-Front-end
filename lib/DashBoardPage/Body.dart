@@ -70,6 +70,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  static int _amount = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -207,8 +208,22 @@ class _BodyState extends State<Body> {
                                 style: TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
-                              trailing: Text(snapshot.data![index].petrolStatus
-                                  .toString()),
+                              // trailing: Text(snapshot.data![index].petrolStatus
+                              //     .toString()),
+                              trailing: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _amount++;
+                                    print(_amount);
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.add,
+                                  size: 15,
+                                ),
+                              ),
+                              // leading: Text(_amount.toString()),
+
                               subtitle: Text(snapshot.data![index].dieselStatus
                                   .toString()),
                             ),
