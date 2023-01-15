@@ -24,6 +24,8 @@ class QueueDetails extends StatefulWidget {
 class _QueueDetailsState extends State<QueueDetails> {
   int petrolcount = 0;
   int _dieselcount = 0;
+  int petrolwaiting = 0;
+  int dieselwaiting = 0;
   bool _isDisable = true;
 
   // _QueueDetailsState({})
@@ -45,8 +47,10 @@ class _QueueDetailsState extends State<QueueDetails> {
     setState(() {
       if (_selectFuelType == 'Petrol') {
         petrolcount++;
+        petrolwaiting = petrolcount * 4;
       } else {
         _dieselcount++;
+        dieselwaiting = _dieselcount * 6;
       }
 
       showDialog(
@@ -54,11 +58,11 @@ class _QueueDetailsState extends State<QueueDetails> {
         builder: (BuildContext context) {
           return AlertDialog(
             // backgroundColor: Colors.teal,
-            title: Text("Alert"),
-            content: Text("You have successfully entered the queue"),
+            title: const Text("Alert"),
+            content: const Text("You have successfully entered the queue"),
             actions: <Widget>[
               ElevatedButton(
-                child: Text(
+                child: const Text(
                   "OK",
                 ),
                 onPressed: () {
@@ -95,11 +99,11 @@ class _QueueDetailsState extends State<QueueDetails> {
       builder: (BuildContext context) {
         return AlertDialog(
           // backgroundColor: Colors.teal,
-          title: Text("Alert"),
-          content: Text("You have successfully Exit the queue"),
+          title: const Text("Alert"),
+          content: const Text("You have successfully Exit the queue"),
           actions: <Widget>[
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 "OK",
               ),
               onPressed: () {
@@ -127,7 +131,7 @@ class _QueueDetailsState extends State<QueueDetails> {
           Uri.parse(
               "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitAfterPump"),
           body: {});
-      print(response.body);
+      // print(response.body);
     }
 
     showDialog(
@@ -135,11 +139,11 @@ class _QueueDetailsState extends State<QueueDetails> {
       builder: (BuildContext context) {
         return AlertDialog(
           // backgroundColor: Colors.teal,
-          title: Text("Alert"),
-          content: Text("You have successfully exited the queue"),
+          title: const Text("Alert"),
+          content: const Text("You have successfully exited the queue"),
           actions: <Widget>[
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 "OK",
               ),
               onPressed: () {
@@ -163,55 +167,68 @@ class _QueueDetailsState extends State<QueueDetails> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
-          SizedBox(
-            width: 400,
-            height: 180,
-            child: Card(
-              elevation: 0,
-              color: kSecondaryColor,
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                ListTile(
-                  title: Text(
-                    widget.name,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 24),
-                  ),
-                  subtitle: Text(widget.location,
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: SizedBox(
+              width: 400,
+              height: 220,
+              child: Card(
+                elevation: 0,
+                color: kSecondaryColor,
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  ListTile(
+                    title: Text(
+                      widget.name,
                       style: const TextStyle(
-                          fontWeight: FontWeight.w100, fontSize: 18)),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text("Petrol Status = ${widget.petrolStatus}",
-                        style: const TextStyle(fontSize: 15)),
-                    Text("Diesel Status = ${widget.dieselStatus}",
-                        style: const TextStyle(fontSize: 15)),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Text("Queue Type = Petrol",
-                        style: TextStyle(fontSize: 15)),
-                    Text("Queue Count = $petrolcount",
-                        style: const TextStyle(fontSize: 15)),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Text("Queue Type = Disesl",
-                        style: TextStyle(fontSize: 15)),
-                    Text("Queue Count = $_dieselcount",
-                        style: const TextStyle(fontSize: 15)),
-                  ],
-                )
-              ]),
+                          fontWeight: FontWeight.bold, fontSize: 24),
+                    ),
+                    subtitle: Text(widget.location,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w100, fontSize: 18)),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Petrol Status = ${widget.petrolStatus}",
+                          style: const TextStyle(fontSize: 15)),
+                      Text("Diesel Status = ${widget.dieselStatus}",
+                          style: const TextStyle(fontSize: 15)),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      Text("Queue Type = Petrol",
+                          style: TextStyle(fontSize: 15)),
+                      Text("Queue Type = Disesl",
+                          style: TextStyle(fontSize: 15)),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Queue Count = $petrolcount",
+                          style: const TextStyle(fontSize: 15)),
+                      Text("Queue Count = $_dieselcount",
+                          style: const TextStyle(fontSize: 15)),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("Waiting Time = $petrolwaiting min",
+                          style: const TextStyle(fontSize: 15)),
+                      Text("Waiting Time = $dieselwaiting min",
+                          style: const TextStyle(fontSize: 15)),
+                    ],
+                  )
+                ]),
+              ),
             ),
           ),
           const SizedBox(height: 20),
