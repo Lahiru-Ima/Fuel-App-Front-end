@@ -85,8 +85,10 @@ class _QueueDetailsState extends State<QueueDetails> {
       setState(() {
         if (_selectFuelType == 'Petrol') {
           petrolcount--;
+          petrolwaiting = petrolcount * 4;
         } else {
           _dieselcount--;
+          dieselwaiting = _dieselcount * 6;
         }
       });
       var response = await http.post(
@@ -126,8 +128,10 @@ class _QueueDetailsState extends State<QueueDetails> {
       setState(() {
         if (_selectFuelType == 'Petrol') {
           petrolcount--;
+          petrolwaiting = petrolcount * 4;
         } else {
           _dieselcount--;
+          dieselwaiting = _dieselcount * 6;
         }
       });
       var response = await http.post(
