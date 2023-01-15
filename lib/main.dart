@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/get_data.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
+import 'package:fuel_app/Lahiru/lahiru.dart';
 import 'package:fuel_app/Routings/routes.dart';
 import 'package:fuel_app/screans/customerLogin.dart';
 import 'package:fuel_app/screans/landing/landing.dart';
@@ -47,16 +48,17 @@ class FuelApp extends StatelessWidget {
         //home: const LogInScreen(),
         // home: Body(),
         // home: GetData(),
+        //home:const Lahiru(),
         home: LandingPage(),
         routes: {
           '/registerPage': (context) => AuthScreen(),
-          '/selectNearestShed': (context) => SearchNearestShed(),
-          '/loginPage': (context) => LogInScreen(),
-          '/customerLogin': (context) => CustomerLogin(),
-          '/dashBoard': (context) => Body(),
-          '/fuelStateUpdate': (context) => FuelStatusUpdate(),
-          '/joinQueue': (context) => QueueUpdate(),
-          '/viewQueue': (context) => ViewQueue(),
+          '/selectNearestShed': (context) => const SearchNearestShed(),
+          '/loginPage': (context) => const LogInScreen(),
+          '/customerLogin': (context) => const CustomerLogin(),
+          '/dashBoard': (context) => const Body(),
+          '/fuelStateUpdate': (context) => const FuelStatusUpdate(),
+          '/joinQueue': (context) => const QueueUpdate(),
+          '/viewQueue': (context) => const ViewQueue(),
         });
   }
 }
