@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'dart:convert';
 import 'dart:async';
+import 'package:fuel_app/userOnQueue/queue_details.dart';
 
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
@@ -73,6 +74,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   static int _amount = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -229,10 +231,24 @@ class _BodyState extends State<Body> {
                               //     .toString()),
                               trailing: IconButton(
                                 onPressed: () {
-                                  setState(() {
-                                    _amount++;
-                                    print(_amount);
-                                  });
+                                  // setState(() {
+                                  //   _amount++;
+                                  //   print(_amount);
+                                  // });
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => QueueDetails(
+                                        name: snapshot.data![index].name,
+                                        location:
+                                            snapshot.data![index].location,
+                                        petrolStatus:
+                                            snapshot.data![index].petrolStatus,
+                                        dieselStatus:
+                                            snapshot.data![index].dieselStatus,
+                                      ),
+                                    ),
+                                  );
                                 },
                                 icon: Icon(
                                   Icons.arrow_forward_ios,
@@ -242,8 +258,9 @@ class _BodyState extends State<Body> {
                               ),
                               // leading: Text(_amount.toString()),
 
-                              subtitle: Text(snapshot.data![index].dieselStatus
-                                  .toString()),
+                              // subtitle: Text(snapshot.data![index].dieselStatus
+                              //     .toString()),
+                              subtitle: Text(_petrolcount.toString()),
                             ),
                           );
                         },
