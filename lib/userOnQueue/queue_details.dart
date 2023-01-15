@@ -50,10 +50,6 @@ class _QueueDetailsState extends State<QueueDetails> {
     if (_petrolcount == 0 && _dieselcount == 0) {
       _isDisable = true;
     } else {
-      var response = await http.post(
-          Uri.parse(
-              "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitBeforePump"),
-          body: {});
       setState(() {
         if (_selectFuelType == 'Petrol') {
           _petrolcount--;
@@ -61,6 +57,10 @@ class _QueueDetailsState extends State<QueueDetails> {
           _dieselcount--;
         }
       });
+      var response = await http.post(
+          Uri.parse(
+              "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitBeforePump"),
+          body: {});
     }
   }
 
@@ -68,11 +68,6 @@ class _QueueDetailsState extends State<QueueDetails> {
     if (_petrolcount == 0 && _dieselcount == 0) {
       _isDisable = true;
     } else {
-      var response = await http.post(
-          Uri.parse(
-              "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitAfterPump"),
-          body: {});
-      print(response.body);
       setState(() {
         if (_selectFuelType == 'Petrol') {
           _petrolcount--;
@@ -80,6 +75,11 @@ class _QueueDetailsState extends State<QueueDetails> {
           _dieselcount--;
         }
       });
+      var response = await http.post(
+          Uri.parse(
+              "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitAfterPump"),
+          body: {});
+      print(response.body);
     }
   }
 
