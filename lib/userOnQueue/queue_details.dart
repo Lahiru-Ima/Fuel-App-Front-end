@@ -46,6 +46,43 @@ class _QueueDetailsState extends State<QueueDetails> {
     _isDisable = false;
   }
 
+  Future<void> beforePump() async {
+    if (_petrolcount == 0 && _dieselcount == 0) {
+      _isDisable = true;
+    } else {
+      var response = await http.post(
+          Uri.parse(
+              "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitBeforePump"),
+          body: {});
+      setState(() {
+        if (_selectFuelType == 'Petrol') {
+          _petrolcount--;
+        } else {
+          _dieselcount--;
+        }
+      });
+    }
+  }
+
+  Future<void> afterPump() async {
+    if (_petrolcount == 0 && _dieselcount == 0) {
+      _isDisable = true;
+    } else {
+      var response = await http.post(
+          Uri.parse(
+              "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitAfterPump"),
+          body: {});
+      print(response.body);
+      setState(() {
+        if (_selectFuelType == 'Petrol') {
+          _petrolcount--;
+        } else {
+          _dieselcount--;
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +122,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                         style: const TextStyle(fontSize: 15)),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -95,7 +132,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                         style: const TextStyle(fontSize: 15)),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -161,24 +198,7 @@ class _QueueDetailsState extends State<QueueDetails> {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: _isDisable
-                ? null
-                : ()
-                // async {
-                //   var response = await http.post(
-                //       Uri.parse(
-                //           "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitBeforePump"),
-                //       body: {});
-                // },
-                {
-                    setState(() {
-                      if (_selectFuelType == 'Petrol') {
-                        _petrolcount--;
-                      } else {
-                        _dieselcount--;
-                      }
-                    });
-                  },
+            onPressed: _isDisable ? null : beforePump,
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green,
               // primary: Colors.purple,
@@ -197,25 +217,7 @@ class _QueueDetailsState extends State<QueueDetails> {
             height: 20,
           ),
           ElevatedButton(
-            onPressed: _isDisable
-                ? null
-                : ()
-                // async {
-                //   var response = await http.post(
-                //       Uri.parse(
-                //           "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitAfterPump"),
-                //       body: {});
-                //   // print(response.body);
-                // },
-                {
-                    setState(() {
-                      if (_selectFuelType == 'Petrol') {
-                        _petrolcount--;
-                      } else {
-                        _dieselcount--;
-                      }
-                    });
-                  },
+            onPressed: _isDisable ? null : afterPump,
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
               //primary: Colors.purple,
