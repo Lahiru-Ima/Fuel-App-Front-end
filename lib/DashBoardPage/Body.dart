@@ -82,6 +82,7 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("Welcome to Fuel House"),
         backgroundColor: kPrimaryColor,
       ),
