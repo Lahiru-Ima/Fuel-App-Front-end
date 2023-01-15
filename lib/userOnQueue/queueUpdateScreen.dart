@@ -15,14 +15,14 @@ class _QueueUpdateState extends State<QueueUpdate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Fuel Status'),
-          backgroundColor: kPrimaryColor,
-        ),
-        body: SingleChildScrollView(
-          child: SafeArea(
-            child: Center(
-                child: Column(children: [
+      appBar: AppBar(
+        title: Text('Fuel Status'),
+        backgroundColor: kPrimaryColor,
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Center(
+            child: Column(children: [
               const Image(
                 image: AssetImage('images/fuelque.png'),
                 height: 300,
@@ -136,8 +136,10 @@ class _QueueUpdateState extends State<QueueUpdate> {
                   ),
                 ],
               ),
-            ])),
+            ]),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
