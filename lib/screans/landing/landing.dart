@@ -27,7 +27,7 @@ class _LandingPageState extends State<LandingPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('images/splash.png'),
+            Image.asset('images/s.png'),
             const SizedBox(height: 8.0),
             const Text(
               "No waiting for fuel",
