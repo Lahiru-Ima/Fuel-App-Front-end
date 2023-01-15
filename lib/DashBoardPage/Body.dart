@@ -129,7 +129,7 @@ class _BodyState extends State<Body> {
           child: Column(
             children: [
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               // ElevatedButton(
               //   // style: ButtonStyle(backgroundColor: Colors.amber),
