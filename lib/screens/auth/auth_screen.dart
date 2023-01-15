@@ -27,6 +27,8 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.teal, title: Text("Welcome to Fuel House")),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(36),
@@ -38,15 +40,6 @@ class _AuthScreenState extends State<AuthScreen> {
                   children: [
                     SizedBox(
                       height: 20,
-                    ),
-                    Container(
-                      child: Text(
-                        'WELCOME',
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400),
-                      ),
                     ),
                     SizedBox(
                       height: 20,
