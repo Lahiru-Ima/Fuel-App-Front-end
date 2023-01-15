@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class InputTextFieldWidget extends StatelessWidget {
   final TextEditingController textEditingController;
   final String hintText;
-  InputTextFieldWidget(this.textEditingController, this.hintText);
+  InputTextFieldWidget(this.textEditingController, this.hintText, {required String? Function(dynamic input) validator});
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -4,7 +4,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
 import 'package:fuel_app/Lahiru/lahiru.dart';
-import 'package:fuel_app/Routings/routes.dart';
 import 'package:fuel_app/screans/customerLogin.dart';
 import 'package:fuel_app/screans/landing/landing.dart';
 import 'package:fuel_app/screans/login.dart';
@@ -19,7 +18,7 @@ import 'package:fuel_app/viewQue/viewQueue.dart';
 import 'package:fuel_app/widgets/navigationBar.dart';
 
 import 'OnbordingScreen/components/body.dart';
-//import 'DashBoardPage/DashBoardPage.dart';
+
 
 void main() {
   runApp(FuelApp());
@@ -49,6 +48,7 @@ class FuelApp extends StatelessWidget {
         // home: GetData(),
         //home:const Lahiru(),
         home: LandingPage(),
+        // home: const Signup(),
         routes: {
           '/registerPage': (context) => AuthScreen(),
           '/selectNearestShed': (context) => const SearchNearestShed(),
@@ -58,6 +58,7 @@ class FuelApp extends StatelessWidget {
           '/fuelStateUpdate': (context) => const FuelStatusUpdate(),
           '/joinQueue': (context) => const QueueUpdate(),
           '/viewQueue': (context) => const ViewQueue(),
+          //'/regustrationNew': (context) => const Signup()
         });
   }
 }

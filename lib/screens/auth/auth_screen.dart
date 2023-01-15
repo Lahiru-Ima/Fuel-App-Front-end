@@ -23,6 +23,10 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Welcome to Fuel House"),
+        backgroundColor: Color.fromARGB(255, 74, 28, 58),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(36),
@@ -35,15 +39,15 @@ class _AuthScreenState extends State<AuthScreen> {
                     SizedBox(
                       height: 30,
                     ),
-                    Container(
-                      child: Text(
-                        'WELCOME',
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
+                    // Container(
+                    //   child: Text(
+                    //     'WELCOME TO FUEL HOUSE',
+                    //     style: TextStyle(
+                    //         fontSize: 20,
+                    //         color: Colors.black,
+                    //         fontWeight: FontWeight.w400),
+                    //   ),
+                    // ),
                     SizedBox(
                       height: 20,
                     ),
@@ -51,8 +55,9 @@ class _AuthScreenState extends State<AuthScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         MaterialButton(
-                          color:
-                              !isLogin.value ? Colors.blueAccent : Colors.white,
+                          color: !isLogin.value
+                              ? Colors.amberAccent
+                              : Colors.white,
                           // color: !isLogin.value ? Colors.amber : Colors.white,
                           onPressed: () {
                             isLogin.value = false;
@@ -60,8 +65,9 @@ class _AuthScreenState extends State<AuthScreen> {
                           child: Text('Register'),
                         ),
                         MaterialButton(
-                          color:
-                              isLogin.value ? Colors.blueAccent : Colors.white,
+                          color: isLogin.value
+                              ? Colors.yellowAccent
+                              : Colors.white,
                           // color: !isLogin.value ? Colors.amber : Colors.white,
                           onPressed: () {
                             isLogin.value = true;
@@ -85,22 +91,43 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget registerWidget() {
     return Column(
       children: [
-        InputTextFieldWidget(registerationController.nameController, 'name'),
+        InputTextFieldWidget(
+          registerationController.nameController,
+          'name',
+          validator: (input) {},
+        ),
         SizedBox(
           height: 20,
         ),
         InputTextFieldWidget(
-            registerationController.emailController, 'email address'),
+          registerationController.emailController,
+          'email address',
+          validator: (input) {
+            if (input!.isEmpty) {
+              return 'Please Enter Email';
+            }
+          },
+        ),
         SizedBox(
           height: 20,
         ),
         InputTextFieldWidget(
-            registerationController.phoneController, 'Telephone'),
+          registerationController.phoneController,
+          'Telephone',
+          validator: (input) {},
+        ),
         SizedBox(
           height: 20,
         ),
         InputTextFieldWidget(
-            registerationController.passwordController, 'password'),
+          registerationController.passwordController,
+          'password',
+          validator: (input) {
+            if (input!.length < 6) {
+              return "Provide Minimum 6 Characters";
+            }
+          },
+        ),
         SizedBox(
           height: 20,
         ),
@@ -118,16 +145,32 @@ class _AuthScreenState extends State<AuthScreen> {
         SizedBox(
           height: 20,
         ),
-        InputTextFieldWidget(loginController.emailController, 'email address'),
+        InputTextFieldWidget(
+          loginController.emailController,
+          'email address',
+          validator: (input) {
+            if (input!.isEmpty) {
+              return 'Please Enter Email';
+            }
+          },
+        ),
         SizedBox(
           height: 20,
         ),
-        InputTextFieldWidget(loginController.passwordController, 'password'),
+        InputTextFieldWidget(
+          loginController.passwordController,
+          'password',
+          validator: (input) {
+            if (input!.length < 6) {
+              return "Provide Minimum 6 Characters";
+            }
+          },
+        ),
         SizedBox(
           height: 20,
         ),
         SubmitButton(
-          // onPressed: () => loginController.loginWithEmail(),
+          
           onPressed: () {
             Navigator.pushNamed(context, '/dashBoard');
           },
