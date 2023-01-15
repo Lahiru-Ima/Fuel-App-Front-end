@@ -83,10 +83,13 @@ class _BodyState extends State<Body> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Welcome to Fuel House"),
+        title: const Text(
+          "Fuel Station List",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: kPrimaryColor,
       ),
-      backgroundColor: Color.fromARGB(162, 255, 255, 255),
+      backgroundColor: Colors.teal[100],
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -94,25 +97,27 @@ class _BodyState extends State<Body> {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                padding: EdgeInsets.all(8),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(197, 255, 214, 64),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Text(
-                    "Fuel Station List",
-                    style: TextStyle(
-                        fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
-                  ),
-                ),
-                decoration: BoxDecoration(),
-              ),
-              SizedBox(
-                height: 10,
-              ),
+              // Container(
+              //   padding: EdgeInsets.all(8),
+              //   child: Container(
+              //     padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+              //     decoration: BoxDecoration(
+              //       color: Colors.teal[200],
+              //       borderRadius: BorderRadius.circular(30),
+              //     ),
+              //     child: Text(
+              //       "Fuel Station List",
+              //       style: TextStyle(
+              //           fontSize: 20,
+              //           color: Color.fromARGB(255, 0, 0, 0),
+              //           fontWeight: FontWeight.bold),
+              //     ),
+              //   ),
+              //   decoration: BoxDecoration(),
+              // ),
+              // SizedBox(
+              //   height: 10,
+              // ),
               Container(
                 height: 600,
                 child: FutureBuilder<List<Album>>(
@@ -179,7 +184,7 @@ class _BodyState extends State<Body> {
                                 icon: Icon(
                                   Icons.arrow_forward_ios,
                                   size: 30,
-                                  color: Colors.red,
+                                  color: Colors.teal[800],
                                 ),
                               ),
                               // leading: Text(_amount.toString()),
