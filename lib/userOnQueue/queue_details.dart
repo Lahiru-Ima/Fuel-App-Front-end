@@ -5,12 +5,12 @@ import '../theme.dart';
 class QueueDetails extends StatefulWidget {
   const QueueDetails(
       {super.key,
-      required this.dealer,
+      required this.name,
       required this.location,
       required this.petrolStatus,
       required this.dieselStatus});
 
-  final String dealer;
+  final String name;
   final String location;
   final String petrolStatus;
   final String dieselStatus;
@@ -68,7 +68,7 @@ class _QueueDetailsState extends State<QueueDetails> {
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 ListTile(
                   title: Text(
-                    widget.dealer,
+                    widget.name,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 24),
                   ),

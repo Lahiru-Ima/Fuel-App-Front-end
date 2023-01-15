@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'dart:convert';
 import 'dart:async';
+import 'package:fuel_app/userOnQueue/queue_details.dart';
 
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
@@ -34,13 +35,13 @@ Future<List<Album>> fetchAlbum() async {
 }
 
 class Album {
-  final String dealer;
+  final String name;
   final String location;
   final String petrolStatus;
   final String dieselStatus;
 
   const Album({
-    required this.dealer,
+    required this.name,
     required this.location,
     required this.petrolStatus,
     required this.dieselStatus,
@@ -48,7 +49,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-        dealer: json['dealer'],
+        name: json['name'],
         location: json['location'],
         petrolStatus: json['petrolStatus'],
         dieselStatus: json['dieselStatus']);
@@ -56,7 +57,7 @@ class Album {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['dealer'] = dealer;
+    data['name'] = name;
     data['Location'] = location;
     data['petrolStatus'] = petrolStatus;
     data['dieselStatus'] = dieselStatus;
@@ -73,6 +74,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   static int _amount = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -210,7 +212,7 @@ class _BodyState extends State<Body> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => QueueDetails(
-                                      dealer: snapshot.data![index].dealer,
+                                      name: snapshot.data![index].name,
                                       location: snapshot.data![index].location,
                                       petrolStatus:
                                           snapshot.data![index].petrolStatus,
@@ -221,7 +223,7 @@ class _BodyState extends State<Body> {
                                 );
                               },
                               title: Text(
-                                snapshot.data![index].dealer.toString(),
+                                snapshot.data![index].name.toString(),
                                 style: TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
@@ -229,21 +231,36 @@ class _BodyState extends State<Body> {
                               //     .toString()),
                               trailing: IconButton(
                                 onPressed: () {
-                                  setState(() {
-                                    _amount++;
-                                    print(_amount);
-                                  });
+                                  // setState(() {
+                                  //   _amount++;
+                                  //   print(_amount);
+                                  // });
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => QueueDetails(
+                                        name: snapshot.data![index].name,
+                                        location:
+                                            snapshot.data![index].location,
+                                        petrolStatus:
+                                            snapshot.data![index].petrolStatus,
+                                        dieselStatus:
+                                            snapshot.data![index].dieselStatus,
+                                      ),
+                                    ),
+                                  );
                                 },
                                 icon: Icon(
-                                  Icons.add,
+                                  Icons.arrow_forward_ios,
                                   size: 30,
                                   color: Colors.red,
                                 ),
                               ),
                               // leading: Text(_amount.toString()),
 
-                              subtitle: Text(snapshot.data![index].dieselStatus
-                                  .toString()),
+                              // subtitle: Text(snapshot.data![index].dieselStatus
+                              //     .toString()),
+                              // subtitle: Text(_petrolcount.toString()),
                             ),
                           );
                         },
