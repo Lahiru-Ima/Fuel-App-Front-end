@@ -168,43 +168,51 @@ class _BodyState extends State<Body> {
               const SizedBox(
                 height: 8,
               ),
-              FutureBuilder<List<Album>>(
-                future: fetchAlbum(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                          shadowColor: Colors.white,
-                          color: Color.fromARGB(255, 218, 228, 88),
-                          margin: EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 20),
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: ListTile(
-                            title: Text(
-                              snapshot.data![index].dealer.toString(),
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+
+              Container(
+                height: 600,
+                child: FutureBuilder<List<Album>>(
+                  future: fetchAlbum(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            shadowColor: Colors.white,
+                            color: Color.fromARGB(255, 202, 216, 11),
+                            margin: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 20),
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
-                            trailing: Text(
-                                snapshot.data![index].petrolStatus.toString()),
-                            subtitle: Text(
-                                snapshot.data![index].dieselStatus.toString()),
-                          ),
-                        );
-                      },
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}');
-                  }
-                  return const CircularProgressIndicator();
-                },
+                            child: ListTile(
+                              title: Text(
+                                snapshot.data![index].dealer.toString(),
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              trailing: Text(snapshot.data![index].petrolStatus
+                                  .toString()),
+                              subtitle: Text(snapshot.data![index].dieselStatus
+                                  .toString()),
+                            ),
+                          );
+                        },
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text('${snapshot.error}');
+                    }
+                    return const CircularProgressIndicator();
+                  },
+                ),
               ),
+
+              Container(
+                child: Text("Bagaginie"),
+              )
             ],
           ),
         ),
