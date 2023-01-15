@@ -9,6 +9,7 @@ import '../screans/selectVehicle.dart';
 import '../station_owner_screen/fuelStatusUpdateScreen.dart';
 import '../station_owner_screen/fuelFinishUpdateScreen.dart';
 import '../userOnQueue/queueUpdateScreen.dart';
+import '../viewQue/viewQueue.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -21,7 +22,7 @@ class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
   final Screens = [
     const productScreen(),
-    const SelectVehicle(),
+    const ViewQueue(),
     const QueueUpdate(),
     FuelStatusUpdate(),
     // FuelStatusUpdate(),
@@ -50,7 +51,7 @@ class _NavBarState extends State<NavBar> {
                 backgroundColor: kPrimaryColor),
             const BottomNavigationBarItem(
                 icon: Icon(Icons.car_crash_outlined),
-                label: "vehicle Type",
+                label: "Station",
                 backgroundColor: kPrimaryColor),
             const BottomNavigationBarItem(
                 icon: Icon(Icons.queue),

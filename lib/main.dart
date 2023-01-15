@@ -10,6 +10,7 @@ import 'package:fuel_app/screans/login.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
 import 'package:fuel_app/screans/signup.dart';
+import 'package:fuel_app/screens/auth/auth_screen.dart';
 import 'package:fuel_app/station_owner_screen/fuelStatusUpdateScreen.dart';
 import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
 import 'package:fuel_app/userOnQueue/queueUpdateScreen.dart';
@@ -36,7 +37,7 @@ class FuelApp extends StatelessWidget {
         // home: SignUpScreen(),
         // home: SelectVehicle(),
         //home: FuelStatusUpdate(),
-        home: ViewQueue(),
+        //home: ViewQueue(),
         // home: FuelFinishUpdate(),
         // home: QueueUpdate(),
         // home: SplashBody(),
@@ -44,15 +45,18 @@ class FuelApp extends StatelessWidget {
         // home: SearchNearestShed(),
         //home: const LogInScreen(),
         // home: Body(),
-        //home: LandingPage(),
+        // home: GetData(),
+        //home:const Lahiru(),
+        home: LandingPage(),
         routes: {
-          '/registerPage': (context) => SignUpScreen(),
-          '/selectNearestShed': (context) => SearchNearestShed(),
-          '/loginPage': (context) => LogInScreen(),
-          '/customerLogin': (context) => CustomerLogin(),
-          '/dashBoard': (context) => Body(),
-          '/fuelStateUpdate': (context) => FuelStatusUpdate(),
-          '/joinQueue': (context) => QueueUpdate(),
+          '/registerPage': (context) => AuthScreen(),
+          '/selectNearestShed': (context) => const SearchNearestShed(),
+          '/loginPage': (context) => const LogInScreen(),
+          '/customerLogin': (context) => const CustomerLogin(),
+          '/dashBoard': (context) => const Body(),
+          '/fuelStateUpdate': (context) => const FuelStatusUpdate(),
+          '/joinQueue': (context) => const QueueUpdate(),
+          '/viewQueue': (context) => const ViewQueue(),
         });
   }
 }
