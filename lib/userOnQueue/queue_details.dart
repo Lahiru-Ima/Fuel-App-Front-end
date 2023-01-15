@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
-int petrolcount = 0;
+// int petrolcount = 0;
 
 class QueueDetails extends StatefulWidget {
   const QueueDetails(
@@ -22,7 +22,7 @@ class QueueDetails extends StatefulWidget {
 }
 
 class _QueueDetailsState extends State<QueueDetails> {
-  // int petrolcount = 0;
+  int petrolcount = 0;
   int _dieselcount = 0;
   bool _isDisable = true;
 
