@@ -59,7 +59,8 @@ class _QueueDetailsState extends State<QueueDetails> {
           return AlertDialog(
             // backgroundColor: Colors.teal,
             title: const Text("Alert"),
-            content: const Text("You have successfully entered the queue"),
+            content: const Text(
+                "You have successfully entered the queue & your arrival time is updated."),
             actions: <Widget>[
               ElevatedButton(
                 child: const Text(
@@ -100,9 +101,11 @@ class _QueueDetailsState extends State<QueueDetails> {
         return AlertDialog(
           // backgroundColor: Colors.teal,
           title: const Text("Alert"),
-          content: const Text("You have successfully Exit the queue"),
+          content: const Text(
+              "You have successfully Exit the queue & your exit time is updated."),
           actions: <Widget>[
             ElevatedButton(
+              //style: ButtonStyle(backgroundColor: Color),
               child: const Text(
                 "OK",
               ),
@@ -140,7 +143,8 @@ class _QueueDetailsState extends State<QueueDetails> {
         return AlertDialog(
           // backgroundColor: Colors.teal,
           title: const Text("Alert"),
-          content: const Text("You have successfully exited the queue"),
+          content: const Text(
+              "You have successfully exited the queue & your exit time is updated."),
           actions: <Widget>[
             ElevatedButton(
               child: const Text(
