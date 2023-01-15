@@ -3,11 +3,9 @@ import 'package:fuel_app/theme.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
-
 import 'build_button.dart';
 
 var now;
-
 
 class FuelStatusUpdate extends StatefulWidget {
   const FuelStatusUpdate({super.key});
@@ -169,25 +167,25 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/dashBoard');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kPrimaryColor,
-                  //primary: Colors.purple,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    //fontWeight: FontWeight.bold
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(29),
-                  ),
-                ),
-                child: const Text('Home'),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, '/dashBoard');
+              //   },
+              //   style: ElevatedButton.styleFrom(
+              //     backgroundColor: kPrimaryColor,
+              //     //primary: Colors.purple,
+              //     padding:
+              //         const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+              //     textStyle: const TextStyle(
+              //       fontSize: 20,
+              //       //fontWeight: FontWeight.bold
+              //     ),
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(29),
+              //     ),
+              //   ),
+              //   child: const Text('Home'),
+              // ),
               // const SizedBox(height: 10),
               // Center(
               //   child: Text(
