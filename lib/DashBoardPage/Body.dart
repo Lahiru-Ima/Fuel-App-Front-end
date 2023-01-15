@@ -170,7 +170,16 @@ class _BodyState extends State<Body> {
               ),
 
               Container(
-                child: Text("Fuel availability"),
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  "Fuel Station List",
+                  style: TextStyle(
+                      fontSize: 15, color: Color.fromARGB(255, 255, 255, 255)),
+                ),
+                decoration: BoxDecoration(),
+              ),
+              SizedBox(
+                height: 10,
               ),
 
               Container(
@@ -213,10 +222,6 @@ class _BodyState extends State<Body> {
                   },
                 ),
               ),
-
-              Container(
-                child: Text("Bagaginie"),
-              )
             ],
           ),
         ),
