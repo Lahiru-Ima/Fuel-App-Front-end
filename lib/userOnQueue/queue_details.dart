@@ -48,6 +48,27 @@ class _QueueDetailsState extends State<QueueDetails> {
       } else {
         _dieselcount++;
       }
+
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            // backgroundColor: Colors.teal,
+            title: Text("Alert"),
+            content: Text("You have successfully entered the queue"),
+            actions: <Widget>[
+              ElevatedButton(
+                child: Text(
+                  "OK",
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
     });
     _isDisable = false;
   }
@@ -68,6 +89,27 @@ class _QueueDetailsState extends State<QueueDetails> {
               "https://fuel-app-backend.up.railway.app/api/fuelQueue/exitBeforePump"),
           body: {});
     }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          // backgroundColor: Colors.teal,
+          title: Text("Alert"),
+          content: Text("You have successfully Exit the queue"),
+          actions: <Widget>[
+            ElevatedButton(
+              child: Text(
+                "OK",
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> afterPump() async {
@@ -87,6 +129,27 @@ class _QueueDetailsState extends State<QueueDetails> {
           body: {});
       print(response.body);
     }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          // backgroundColor: Colors.teal,
+          title: Text("Alert"),
+          content: Text("You have successfully exited the queue"),
+          actions: <Widget>[
+            ElevatedButton(
+              child: Text(
+                "OK",
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
