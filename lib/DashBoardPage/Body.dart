@@ -96,10 +96,17 @@ class _BodyState extends State<Body> {
               ),
               Container(
                 padding: EdgeInsets.all(8),
-                child: Text(
-                  "Fuel Station List",
-                  style: TextStyle(
-                      fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(197, 255, 214, 64),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Text(
+                    "Fuel Station List",
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
+                  ),
                 ),
                 decoration: BoxDecoration(),
               ),
