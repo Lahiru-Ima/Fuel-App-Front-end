@@ -3,7 +3,6 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
-
 import 'package:fuel_app/screans/customerLogin.dart';
 import 'package:fuel_app/screans/landing/landing.dart';
 import 'package:fuel_app/screans/login.dart';
@@ -12,7 +11,6 @@ import 'package:fuel_app/screans/selectVehicle.dart';
 import 'package:fuel_app/screans/signup.dart';
 import 'package:fuel_app/screens/auth/auth_screen.dart';
 import 'package:fuel_app/station_owner_screen/fuelStatusUpdateScreen.dart';
-import 'package:fuel_app/station_owner_screen/fuelFinishUpdateScreen.dart';
 import 'package:fuel_app/userOnQueue/queueUpdateScreen.dart';
 import 'package:fuel_app/viewQue/viewQueue.dart';
 import 'package:fuel_app/widgets/navigationBar.dart';
