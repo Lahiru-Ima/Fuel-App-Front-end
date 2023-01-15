@@ -166,11 +166,15 @@ class _BodyState extends State<Body> {
                 child: const Text("Join To The Queue"),
               ),
               const SizedBox(
-                height: 8,
+                height: 20,
               ),
 
               Container(
-                height: 600,
+                child: Text("Fuel availability"),
+              ),
+
+              Container(
+                height: 400,
                 child: FutureBuilder<List<Album>>(
                   future: fetchAlbum(),
                   builder: (context, snapshot) {
