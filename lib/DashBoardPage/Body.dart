@@ -260,7 +260,7 @@ class _BodyState extends State<Body> {
 
                               // subtitle: Text(snapshot.data![index].dieselStatus
                               //     .toString()),
-                              subtitle: Text(_petrolcount.toString()),
+                              // subtitle: Text(_petrolcount.toString()),
                             ),
                           );
                         },
