@@ -115,16 +115,15 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                 height: 250,
                 width: 200,
               ),
-
               const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
-                // onPressed: updateArrivalTime,
-                onPressed: () {
-                  var now = DateTime.now();
-                  print(now);
-                },
+                onPressed: updateArrivalTime,
+                // onPressed: () {
+                //   var now = DateTime.now();
+                //   print(now);
+                // },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
                   //primary: Colors.purple,
@@ -167,34 +166,6 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               const SizedBox(
                 height: 20,
               ),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, '/dashBoard');
-              //   },
-              //   style: ElevatedButton.styleFrom(
-              //     backgroundColor: kPrimaryColor,
-              //     //primary: Colors.purple,
-              //     padding:
-              //         const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
-              //     textStyle: const TextStyle(
-              //       fontSize: 20,
-              //       //fontWeight: FontWeight.bold
-              //     ),
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(29),
-              //     ),
-              //   ),
-              //   child: const Text('Home'),
-              // ),
-              // const SizedBox(height: 10),
-              // Center(
-              //   child: Text(
-              //     'Fuel Arrival Time:\n        ${_time.format(context)}',
-              //     style: const TextStyle(fontSize: 25, color: kSecondaryColor
-              //         //fontWeight: FontWeight.bold
-              //         ),
-              //   ),
-              // ),
             ],
           ),
         ),
