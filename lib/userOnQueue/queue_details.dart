@@ -1,6 +1,5 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-
 import '../theme.dart';
 
 class QueueDetails extends StatefulWidget {
@@ -42,6 +41,7 @@ class _QueueDetailsState extends State<QueueDetails> {
             Text(widget.petrolStatus),
             Text(widget.dieselStatus),
             const SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 setState(() {
@@ -74,7 +74,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                 // print(response.body);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
+                backgroundColor: Colors.green,
                 // primary: Colors.purple,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
@@ -100,7 +100,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                 // print(response.body);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
+                backgroundColor: Colors.red,
                 //primary: Colors.purple,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 47, vertical: 15),
