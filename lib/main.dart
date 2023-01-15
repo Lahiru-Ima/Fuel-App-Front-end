@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:fuel_app/DashBoardPage/Body.dart';
 import 'package:fuel_app/DashBoardPage/productScreen.dart';
 import 'package:fuel_app/screans/customerLogin.dart';
-import 'package:fuel_app/screans/landing/landing.dart';
+import 'package:fuel_app/screens/landing/landing.dart';
 import 'package:fuel_app/screans/login.dart';
 import 'package:fuel_app/screans/selectNearestShed.dart';
 import 'package:fuel_app/screans/selectVehicle.dart';
