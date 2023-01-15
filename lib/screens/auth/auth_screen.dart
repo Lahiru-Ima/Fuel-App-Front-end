@@ -39,7 +39,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     SizedBox(
                       height: 20,
@@ -68,7 +68,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 80,
+                      height: 30,
                     ),
                     isLogin.value ? loginWidget() : registerWidget()
                   ]),
