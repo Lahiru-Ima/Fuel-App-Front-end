@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
 import 'package:http/http.dart' as http;
 
+import '../station_owner_screen/fuelStatusUpdateScreen.dart';
 import '../userOnQueue/queue_details.dart';
 // import 'package:dio/dio.dart';
 
@@ -74,6 +75,8 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   static int _amount = 1;
+
+  // QueueDetails()
 
   @override
   Widget build(BuildContext context) {
@@ -258,9 +261,9 @@ class _BodyState extends State<Body> {
                               ),
                               // leading: Text(_amount.toString()),
 
-                              // subtitle: Text(snapshot.data![index].dieselStatus
-                              //     .toString()),
-                              // subtitle: Text(_petrolcount.toString()),
+                              subtitle: Text(
+                                  snapshot.data![index].location.toString()),
+                              // subtitle: Text(petrolcount.toString()),
                             ),
                           );
                         },

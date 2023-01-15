@@ -2,6 +2,8 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import '../theme.dart';
 
+int petrolcount = 0;
+
 class QueueDetails extends StatefulWidget {
   const QueueDetails(
       {super.key,
@@ -20,11 +22,15 @@ class QueueDetails extends StatefulWidget {
 }
 
 class _QueueDetailsState extends State<QueueDetails> {
-  int _petrolcount = 0;
+  // int petrolcount = 0;
   int _dieselcount = 0;
   bool _isDisable = true;
 
+  // _QueueDetailsState({})
+
   _QueueDetailsState() {
+    // @required this._petrocount;
+
     _selectFuelType = _fuelType[0];
   }
 
@@ -38,7 +44,7 @@ class _QueueDetailsState extends State<QueueDetails> {
   void joinQueue() {
     setState(() {
       if (_selectFuelType == 'Petrol') {
-        _petrolcount++;
+        petrolcount++;
       } else {
         _dieselcount++;
       }
@@ -91,7 +97,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                   children: [
                     const Text("Queue Type = Petrol",
                         style: TextStyle(fontSize: 15)),
-                    Text("Queue Count = $_petrolcount",
+                    Text("Queue Count = $petrolcount",
                         style: const TextStyle(fontSize: 15)),
                   ],
                 ),
@@ -173,7 +179,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                 {
                     setState(() {
                       if (_selectFuelType == 'Petrol') {
-                        _petrolcount--;
+                        petrolcount--;
                       } else {
                         _dieselcount--;
                       }
@@ -210,7 +216,7 @@ class _QueueDetailsState extends State<QueueDetails> {
                 {
                     setState(() {
                       if (_selectFuelType == 'Petrol') {
-                        _petrolcount--;
+                        petrolcount--;
                       } else {
                         _dieselcount--;
                       }

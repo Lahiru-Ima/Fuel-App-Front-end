@@ -4,6 +4,8 @@ import 'package:fuel_app/widgets/primary_button.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
+var now;
+
 class FuelStatusUpdate extends StatefulWidget {
   const FuelStatusUpdate({super.key});
 
@@ -154,7 +156,11 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
                 height: 20,
               ),
               ElevatedButton(
-                onPressed: updateArrivalTime,
+                // onPressed: updateArrivalTime,
+                onPressed: () {
+                  var now = DateTime.now();
+                  print(now);
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
                   //primary: Colors.purple,
@@ -199,8 +205,8 @@ class _FuelStatusUpdateState extends State<FuelStatusUpdate> {
               ),
               ElevatedButton(
                 onPressed: () {
-              Navigator.pushNamed(context, '/dashBoard');
-              },
+                  Navigator.pushNamed(context, '/dashBoard');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
                   //primary: Colors.purple,
