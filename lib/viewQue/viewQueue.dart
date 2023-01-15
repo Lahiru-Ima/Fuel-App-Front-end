@@ -101,7 +101,7 @@ class _ViewQueueState extends State<ViewQueue> {
               children: [
                 const Image(
                   image: AssetImage('images/fuelWoman.png'),
-                  height: 200,
+                  height: 300,
                   width: 200,
                 ),
                 const Text(
@@ -112,7 +112,7 @@ class _ViewQueueState extends State<ViewQueue> {
                       color: kSecondaryColor),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 Container(
                   padding: const EdgeInsets.fromLTRB(50, 5, 50, 5),
@@ -149,7 +149,7 @@ class _ViewQueueState extends State<ViewQueue> {
                   ),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 25,
                 ),
                 const Text(
                   "Select Fuel Station Here:",
@@ -194,7 +194,7 @@ class _ViewQueueState extends State<ViewQueue> {
                   ),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 25,
                 ),
                 const Text(
                   "Select Your Vehicle Type Here:",
@@ -266,23 +266,23 @@ class _ViewQueueState extends State<ViewQueue> {
                 const SizedBox(
                   height: 5,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/queueUpdateScreen');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kSecondaryColor,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 20),
-                    textStyle: const TextStyle(
-                      fontSize: 20,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
-                    ),
-                  ),
-                  child: const Text("View Queue"),
-                ),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     Navigator.pushNamed(context, '/queueUpdateScreen');
+                //   },
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: kSecondaryColor,
+                //     padding: const EdgeInsets.symmetric(
+                //         horizontal: 50, vertical: 20),
+                //     textStyle: const TextStyle(
+                //       fontSize: 20,
+                //     ),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(40.0),
+                //     ),
+                //   ),
+                //   child: const Text("View Queue"),
+                // ),
               ],
             ),
           ),
