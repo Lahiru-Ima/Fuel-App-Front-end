@@ -51,6 +51,8 @@ class _ViewQueueState extends State<ViewQueue> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: Text("Join Queue"),
         backgroundColor: kPrimaryColor,
       ),
       bottomNavigationBar: Container(
@@ -99,13 +101,13 @@ class _ViewQueueState extends State<ViewQueue> {
               children: [
                 const Image(
                   image: AssetImage('images/fuelWoman.png'),
-                  height: 300,
-                  width: 300,
+                  height: 200,
+                  width: 200,
                 ),
                 const Text(
                   "Select Fuel Type Here:",
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: kSecondaryColor),
                 ),
@@ -113,7 +115,7 @@ class _ViewQueueState extends State<ViewQueue> {
                   height: 5,
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(95, 8, 90, 8),
+                  padding: const EdgeInsets.fromLTRB(50, 5, 50, 5),
                   decoration: BoxDecoration(
                       color: kPrimaryColor,
                       borderRadius: BorderRadius.circular(40)
@@ -152,7 +154,7 @@ class _ViewQueueState extends State<ViewQueue> {
                 const Text(
                   "Select Fuel Station Here:",
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: kSecondaryColor),
                 ),
@@ -160,7 +162,7 @@ class _ViewQueueState extends State<ViewQueue> {
                   height: 10,
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(80, 8, 80, 8),
+                  padding: const EdgeInsets.fromLTRB(50, 5, 50, 5),
                   decoration: BoxDecoration(
                     color: kPrimaryColor,
                     borderRadius: BorderRadius.circular(40),
@@ -197,7 +199,7 @@ class _ViewQueueState extends State<ViewQueue> {
                 const Text(
                   "Select Your Vehicle Type Here:",
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: kSecondaryColor),
                 ),
@@ -205,7 +207,7 @@ class _ViewQueueState extends State<ViewQueue> {
                   height: 10,
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(20, 8, 10, 8),
+                  padding: const EdgeInsets.fromLTRB(50, 5, 50, 5),
                   decoration: BoxDecoration(
                       color: kPrimaryColor,
                       borderRadius: BorderRadius.circular(40)
