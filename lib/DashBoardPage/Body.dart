@@ -122,7 +122,7 @@ class _BodyState extends State<Body> {
           ],
         ),
       ),
-      backgroundColor: kPrimaryColor,
+      backgroundColor: Color.fromARGB(162, 255, 255, 255),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -153,36 +153,36 @@ class _BodyState extends State<Body> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                // style: ButtonStyle(backgroundColor: Colors.amber),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/joinQueue');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kSecondaryColor,
-                  // primary: Colors.purple,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    //fontWeight: FontWeight.bold
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                  ),
-                ),
-                child: const Text("Join To The Queue"),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              // ElevatedButton(
+              //   // style: ButtonStyle(backgroundColor: Colors.amber),
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, '/joinQueue');
+              //   },
+              //   style: ElevatedButton.styleFrom(
+              //     backgroundColor: kSecondaryColor,
+              //     // primary: Colors.purple,
+              //     padding:
+              //         const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+              //     textStyle: const TextStyle(
+              //       fontSize: 20,
+              //       //fontWeight: FontWeight.bold
+              //     ),
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(40.0),
+              //     ),
+              //   ),
+              //   child: const Text("Join To The Queue"),
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
 
               Container(
                 padding: EdgeInsets.all(8),
                 child: Text(
                   "Fuel Station List",
                   style: TextStyle(
-                      fontSize: 15, color: Color.fromARGB(255, 255, 255, 255)),
+                      fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
                 decoration: BoxDecoration(),
               ),
@@ -191,7 +191,7 @@ class _BodyState extends State<Body> {
               ),
 
               Container(
-                height: 400,
+                height: 600,
                 child: FutureBuilder<List<Album>>(
                   future: fetchAlbum(),
                   builder: (context, snapshot) {
