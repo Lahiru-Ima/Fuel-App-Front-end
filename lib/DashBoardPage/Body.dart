@@ -115,33 +115,33 @@ class _BodyState extends State<Body> {
         ),
       ),
       backgroundColor: kPrimaryColor,
-      body: Center(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Center(
           child: Column(
             children: [
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                // style: ButtonStyle(backgroundColor: Colors.amber),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/selectNearestShed');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kSecondaryColor,
-                  // primary: Colors.purple,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                    //fontWeight: FontWeight.bold
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                  ),
-                ),
-                child: const Text("Search Nearest Fuel station"),
-              ),
+              // ElevatedButton(
+              //   // style: ButtonStyle(backgroundColor: Colors.amber),
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, '/selectNearestShed');
+              //   },
+              //   style: ElevatedButton.styleFrom(
+              //     backgroundColor: kSecondaryColor,
+              //     // primary: Colors.purple,
+              //     padding:
+              //         const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+              //     textStyle: const TextStyle(
+              //       fontSize: 20,
+              //       //fontWeight: FontWeight.bold
+              //     ),
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(40.0),
+              //     ),
+              //   ),
+              //   child: const Text("Search Nearest Fuel station"),
+              // ),
               const SizedBox(
                 height: 20,
               ),
@@ -178,7 +178,7 @@ class _BodyState extends State<Body> {
                       itemBuilder: (context, index) {
                         return Card(
                           shadowColor: Colors.white,
-                          color: Colors.tealAccent,
+                          color: Color.fromARGB(255, 218, 228, 88),
                           margin: EdgeInsets.symmetric(
                               vertical: 10, horizontal: 20),
                           elevation: 5,
