@@ -119,7 +119,7 @@ class _BodyState extends State<Body> {
               //   height: 10,
               // ),
               Container(
-                height: 600,
+                height: 650,
                 child: FutureBuilder<List<Album>>(
                   future: fetchAlbum(),
                   builder: (context, snapshot) {
