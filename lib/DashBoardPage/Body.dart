@@ -197,7 +197,7 @@ class _BodyState extends State<Body> {
                         itemBuilder: (context, index) {
                           return Card(
                             shadowColor: Colors.white,
-                            color: Color.fromARGB(255, 202, 216, 11),
+                            color: Color.fromARGB(255, 240, 241, 242),
                             margin: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 20),
                             elevation: 5,
@@ -236,7 +236,8 @@ class _BodyState extends State<Body> {
                                 },
                                 icon: Icon(
                                   Icons.add,
-                                  size: 15,
+                                  size: 30,
+                                  color: Colors.red,
                                 ),
                               ),
                               // leading: Text(_amount.toString()),
