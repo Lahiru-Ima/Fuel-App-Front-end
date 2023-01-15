@@ -53,12 +53,12 @@ class _QueueDetailsState extends State<QueueDetails> {
   }
 
   Future<void> beforePump() async {
-    if (_petrolcount == 0 && _dieselcount == 0) {
+    if (petrolcount == 0 && _dieselcount == 0) {
       _isDisable = true;
     } else {
       setState(() {
         if (_selectFuelType == 'Petrol') {
-          _petrolcount--;
+          petrolcount--;
         } else {
           _dieselcount--;
         }
@@ -71,12 +71,12 @@ class _QueueDetailsState extends State<QueueDetails> {
   }
 
   Future<void> afterPump() async {
-    if (_petrolcount == 0 && _dieselcount == 0) {
+    if (petrolcount == 0 && _dieselcount == 0) {
       _isDisable = true;
     } else {
       setState(() {
         if (_selectFuelType == 'Petrol') {
-          _petrolcount--;
+          petrolcount--;
         } else {
           _dieselcount--;
         }
