@@ -86,43 +86,6 @@ class _BodyState extends State<Body> {
         title: const Text("Welcome to Fuel House"),
         backgroundColor: kPrimaryColor,
       ),
-      bottomNavigationBar: Container(
-        height: 70,
-        color: kPrimaryColor,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/dashBoard');
-              },
-              icon: Icon(Icons.home),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/viewQueue');
-              },
-              icon: Icon(Icons.car_crash_outlined),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/joinQueue');
-                // Navigator.of(context)
-                //     .push(MaterialPageRoute(builder: (context) => Scan()));
-              },
-              icon: Icon(
-                Icons.queue,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/fuelStateUpdate');
-              },
-              icon: Icon(Icons.update),
-            ),
-          ],
-        ),
-      ),
       backgroundColor: Color.fromARGB(162, 255, 255, 255),
       body: SingleChildScrollView(
         child: Center(
@@ -131,66 +94,25 @@ class _BodyState extends State<Body> {
               const SizedBox(
                 height: 10,
               ),
-              // ElevatedButton(
-              //   // style: ButtonStyle(backgroundColor: Colors.amber),
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, '/selectNearestShed');
-              //   },
-              //   style: ElevatedButton.styleFrom(
-              //     backgroundColor: kSecondaryColor,
-              //     // primary: Colors.purple,
-              //     padding:
-              //         const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-              //     textStyle: const TextStyle(
-              //       fontSize: 20,
-              //       //fontWeight: FontWeight.bold
-              //     ),
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(40.0),
-              //     ),
-              //   ),
-              //   child: const Text("Search Nearest Fuel station"),
-              // ),
-              const SizedBox(
-                height: 20,
-              ),
-              // ElevatedButton(
-              //   // style: ButtonStyle(backgroundColor: Colors.amber),
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, '/joinQueue');
-              //   },
-              //   style: ElevatedButton.styleFrom(
-              //     backgroundColor: kSecondaryColor,
-              //     // primary: Colors.purple,
-              //     padding:
-              //         const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-              //     textStyle: const TextStyle(
-              //       fontSize: 20,
-              //       //fontWeight: FontWeight.bold
-              //     ),
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(40.0),
-              //     ),
-              //   ),
-              //   child: const Text("Join To The Queue"),
-              // ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-
               Container(
                 padding: EdgeInsets.all(8),
-                child: Text(
-                  "Fuel Station List",
-                  style: TextStyle(
-                      fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(197, 255, 214, 64),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Text(
+                    "Fuel Station List",
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
+                  ),
                 ),
                 decoration: BoxDecoration(),
               ),
               SizedBox(
                 height: 10,
               ),
-
               Container(
                 height: 600,
                 child: FutureBuilder<List<Album>>(
@@ -272,7 +194,7 @@ class _BodyState extends State<Body> {
                     } else if (snapshot.hasError) {
                       return Text('${snapshot.error}');
                     }
-                    return const CircularProgressIndicator();
+                    return Center(child: const CircularProgressIndicator());
                   },
                 ),
               ),

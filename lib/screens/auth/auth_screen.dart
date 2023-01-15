@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/screens/auth/widgets/input_fields.dart';
 import 'package:fuel_app/screens/auth/widgets/submit_button.dart';
+import 'package:fuel_app/theme.dart';
 import 'package:get/get.dart';
 
 import '../../controllers/login_controller.dart';
@@ -25,7 +26,7 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Welcome to Fuel House"),
-        backgroundColor: Color.fromARGB(255, 74, 28, 58),
+        backgroundColor: kPrimaryColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -170,7 +171,6 @@ class _AuthScreenState extends State<AuthScreen> {
           height: 20,
         ),
         SubmitButton(
-          
           onPressed: () {
             Navigator.pushNamed(context, '/dashBoard');
           },
