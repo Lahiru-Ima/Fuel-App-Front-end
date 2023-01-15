@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:fuel_app/theme.dart';
 
 class SubmitButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -28,7 +29,7 @@ class SubmitButton extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       side: BorderSide.none)),
               backgroundColor: MaterialStateProperty.all<Color>(
-                Color.fromARGB(255, 74, 28, 58),
+                kPrimaryColor,
               )),
           onPressed: onPressed,
           child: Text(title,
