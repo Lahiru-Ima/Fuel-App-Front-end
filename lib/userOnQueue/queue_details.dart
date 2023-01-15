@@ -22,6 +22,7 @@ class QueueDetails extends StatefulWidget {
 class _QueueDetailsState extends State<QueueDetails> {
   int _petrolcount = 0;
   int _dieselcount = 0;
+  bool _isDisable = true;
 
   _QueueDetailsState() {
     _selectFuelType = _fuelType[0];
@@ -31,7 +32,19 @@ class _QueueDetailsState extends State<QueueDetails> {
     "Diesel",
     "Petrol",
   ];
+
   String? _selectFuelType = "";
+
+  void joinQueue() {
+    setState(() {
+      if (_selectFuelType == 'Petrol') {
+        _petrolcount++;
+      } else {
+        _dieselcount++;
+      }
+    });
+    _isDisable = false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,15 +144,7 @@ class _QueueDetailsState extends State<QueueDetails> {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {
-              setState(() {
-                if (_selectFuelType == 'Petrol') {
-                  _petrolcount++;
-                } else {
-                  _dieselcount++;
-                }
-              });
-            },
+            onPressed: joinQueue,
             style: ElevatedButton.styleFrom(
               backgroundColor: kPrimaryColor,
               //primary: Colors.purple,
@@ -156,7 +161,9 @@ class _QueueDetailsState extends State<QueueDetails> {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: ()
+            onPressed: _isDisable
+                ? null
+                : ()
                 // async {
                 //   var response = await http.post(
                 //       Uri.parse(
@@ -164,14 +171,14 @@ class _QueueDetailsState extends State<QueueDetails> {
                 //       body: {});
                 // },
                 {
-              setState(() {
-                if (_selectFuelType == 'Petrol') {
-                  _petrolcount--;
-                } else {
-                  _dieselcount--;
-                }
-              });
-            },
+                    setState(() {
+                      if (_selectFuelType == 'Petrol') {
+                        _petrolcount--;
+                      } else {
+                        _dieselcount--;
+                      }
+                    });
+                  },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green,
               // primary: Colors.purple,
@@ -190,7 +197,9 @@ class _QueueDetailsState extends State<QueueDetails> {
             height: 20,
           ),
           ElevatedButton(
-            onPressed: ()
+            onPressed: _isDisable
+                ? null
+                : ()
                 // async {
                 //   var response = await http.post(
                 //       Uri.parse(
@@ -199,14 +208,14 @@ class _QueueDetailsState extends State<QueueDetails> {
                 //   // print(response.body);
                 // },
                 {
-              setState(() {
-                if (_selectFuelType == 'Petrol') {
-                  _petrolcount--;
-                } else {
-                  _dieselcount--;
-                }
-              });
-            },
+                    setState(() {
+                      if (_selectFuelType == 'Petrol') {
+                        _petrolcount--;
+                      } else {
+                        _dieselcount--;
+                      }
+                    });
+                  },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
               //primary: Colors.purple,
