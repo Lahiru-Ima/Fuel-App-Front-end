@@ -20,11 +20,13 @@ class _OnbordingBodyState extends State<OnbordingBody> {
       "image": "images/splash_1.png"
     },
     {
-      "text": "Book fuel delivery  pin their \nlocation  and pop the gas tank",
+      "text":
+          "Without pump fuel if you exit, you should \nupdate as exit before pump fuel",
       "image": "images/splash_2.png"
     },
     {
-      "text": "Once the fuel is filled \none can get a receipt over the app",
+      "text":
+          "Once the fuel is filled you should \nupdate as exit after pump fuel",
       "image": "images/splash_3.png"
     },
   ];

@@ -49,7 +49,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       children: [
                         MaterialButton(
                           color:
-                              !isLogin.value ? Colors.blueAccent : Colors.white,
+                              !isLogin.value ? Colors.teal[200] : Colors.white,
                           // color: !isLogin.value ? Colors.amber : Colors.white,
                           onPressed: () {
                             isLogin.value = false;
@@ -58,7 +58,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         ),
                         MaterialButton(
                           color:
-                              isLogin.value ? Colors.blueAccent : Colors.white,
+                              isLogin.value ? Colors.teal[200] : Colors.white,
                           // color: !isLogin.value ? Colors.amber : Colors.white,
                           onPressed: () {
                             isLogin.value = true;
