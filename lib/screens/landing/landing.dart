@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_app/OnbordingScreen/components/body.dart';
-import 'package:fuel_app/screans/landing/util_functions.dart';
+import 'package:fuel_app/screens/landing/util_functions.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
