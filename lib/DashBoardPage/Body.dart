@@ -5,6 +5,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:fuel_app/theme.dart';
 import 'package:http/http.dart' as http;
+
+import '../userOnQueue/queue_details.dart';
 // import 'package:dio/dio.dart';
 
 //import 'SearchBox.dart';
@@ -33,13 +35,13 @@ Future<List<Album>> fetchAlbum() async {
 
 class Album {
   final String dealer;
-  final String Location;
+  final String location;
   final String petrolStatus;
   final String dieselStatus;
 
   const Album({
     required this.dealer,
-    required this.Location,
+    required this.location,
     required this.petrolStatus,
     required this.dieselStatus,
   });
@@ -47,7 +49,7 @@ class Album {
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
         dealer: json['dealer'],
-        Location: json['location'],
+        location: json['location'],
         petrolStatus: json['petrolStatus'],
         dieselStatus: json['dieselStatus']);
   }
@@ -55,7 +57,7 @@ class Album {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['dealer'] = dealer;
-    data['Location'] = Location;
+    data['Location'] = location;
     data['petrolStatus'] = petrolStatus;
     data['dieselStatus'] = dieselStatus;
     return data;
@@ -202,6 +204,21 @@ class _BodyState extends State<Body> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             child: ListTile(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => QueueDetails(
+                                      dealer: snapshot.data![index].dealer,
+                                      location: snapshot.data![index].location,
+                                      petrolStatus:
+                                          snapshot.data![index].petrolStatus,
+                                      dieselStatus:
+                                          snapshot.data![index].dieselStatus,
+                                    ),
+                                  ),
+                                );
+                              },
                               title: Text(
                                 snapshot.data![index].dealer.toString(),
                                 style: TextStyle(
